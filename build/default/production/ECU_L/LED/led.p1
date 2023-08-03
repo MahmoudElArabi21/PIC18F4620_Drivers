@@ -1,29 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"17 ./ECU_L/LED/led.h
-[; ;./ECU_L/LED/led.h: 17: typedef struct{
+"17 ECU_L/LED/led.h
+[; ;ECU_L/LED/led.h: 17: typedef struct{
 [s S274 :3 `uc 1 :3 `uc 1 :1 `uc 1 ]
 [n S274 . led_port led_pin led_status ]
-"14 app.c
-[; ;app.c: 14: led_t led0portd = {port_A, 0, 1};
-[c E2983 0 1 2 3 4 .. ]
-[n E2983 . port_A port_B port_C port_D port_E  ]
-[p mainexit ]
-"23 ./ECU_L/LED/led.h
-[; ;./ECU_L/LED/led.h: 23: Std_ReturnType led_init(const led_t* my_led);
-[v _led_init `(uc ~T0 @X0 0 ef1`*CS274 ]
-[v F677 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
-[v __delay `JF677 ~T0 @X0 0 e ]
-[p i __delay ]
-"25 ./ECU_L/LED/led.h
-[; ;./ECU_L/LED/led.h: 25: Std_ReturnType led_turn_off(const led_t* my_led);
-[v _led_turn_off `(uc ~T0 @X0 0 ef1`*CS274 ]
-"24
-[; ;./ECU_L/LED/led.h: 24: Std_ReturnType led_turn_on(const led_t* my_led);
-[v _led_turn_on `(uc ~T0 @X0 0 ef1`*CS274 ]
-"26
-[; ;./ECU_L/LED/led.h: 26: Std_ReturnType led_toggle(const led_t* my_led);
-[v _led_toggle `(uc ~T0 @X0 0 ef1`*CS274 ]
+"52 ECU_L/LED/../../MCAL/GPIO/gpio.h
+[; ;ECU_L/LED/../../MCAL/GPIO/gpio.h: 52: typedef struct{
+[s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S273 . port pin direction logic ]
+"6 ECU_L/LED/led.c
+[; ;ECU_L/LED/led.c: 6:     pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, my_led->led_status};
+[c E2969 0 1 .. ]
+[n E2969 . gpio_output gpio_input  ]
+"66 ECU_L/LED/../../MCAL/GPIO/gpio.h
+[; ;ECU_L/LED/../../MCAL/GPIO/gpio.h: 66: Std_ReturnType gpio_pin_initialize(const pin_config_t *my_pin);
+[v _gpio_pin_initialize `(uc ~T0 @X0 0 ef1`*CS273 ]
+"17 ECU_L/LED/led.c
+[; ;ECU_L/LED/led.c: 17:     pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, gpio_high};
+[c E2965 0 1 .. ]
+[n E2965 . gpio_low gpio_high  ]
+"63 ECU_L/LED/../../MCAL/GPIO/gpio.h
+[; ;ECU_L/LED/../../MCAL/GPIO/gpio.h: 63: Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin);
+[v _gpio_pin_logic_write `(uc ~T0 @X0 0 ef1`*CS273 ]
+"65
+[; ;ECU_L/LED/../../MCAL/GPIO/gpio.h: 65: Std_ReturnType gpio_pin_logic_toggle(const pin_config_t *my_pin);
+[v _gpio_pin_logic_toggle `(uc ~T0 @X0 0 ef1`*CS273 ]
 "55 C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -435,81 +435,231 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6716
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6716: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"14 app.c
-[; ;app.c: 14: led_t led0portd = {port_A, 0, 1};
-[v _led0portd `S274 ~T0 @X0 1 e ]
-[i _led0portd
+"4 ECU_L/LED/led.c
+[; ;ECU_L/LED/led.c: 4: Std_ReturnType led_init(const led_t* my_led){
+[v _led_init `(uc ~T0 @X0 1 ef1`*CS274 ]
+{
+[e :U _led_init ]
+[v _my_led `*CS274 ~T0 @X0 1 r1 ]
+[f ]
+"5
+[; ;ECU_L/LED/led.c: 5:     Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+[v F3044 `S273 ~T0 @X0 1 s ]
+[i F3044
 :U ..
 :U ..
--> . `E2983 0 `uc
+"6
+[; ;ECU_L/LED/led.c: 6:     pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, my_led->led_status};
 -> -> 0 `i `uc
--> -> 1 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
 ..
 ..
 ]
-[v $root$_main `(v ~T0 @X0 0 e ]
-"17
-[; ;app.c: 17: int main() {
-[v _main `(i ~T0 @X0 1 ef ]
+[v _my_pin `S273 ~T0 @X0 1 a ]
+[e = _my_pin F3044 ]
+[e ; = . _my_pin 0 . *U _my_led 0 ; = . _my_pin 1 . *U _my_led 1 ; = . _my_pin 2 -> . `E2969 0 `uc = . _my_pin 3 . *U _my_led 2 ]
+"7
+[; ;ECU_L/LED/led.c: 7:     if(my_led == ((void*)0)){
+[e $ ! == _my_led -> -> -> 0 `i `*v `*CS274 276  ]
 {
-[e :U _main ]
-[f ]
-"18
-[; ;app.c: 18:     led_init(&led0portd);
-[e ( _led_init (1 -> &U _led0portd `*CS274 ]
-"19
-[; ;app.c: 19:     _delay((unsigned long)((200)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"20
-[; ;app.c: 20:     led_turn_off(&led0portd);
-[e ( _led_turn_off (1 -> &U _led0portd `*CS274 ]
-"21
-[; ;app.c: 21:     _delay((unsigned long)((200)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"22
-[; ;app.c: 22:     led_init(&led0portd);
-[e ( _led_init (1 -> &U _led0portd `*CS274 ]
-"23
-[; ;app.c: 23:     _delay((unsigned long)((200)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"24
-[; ;app.c: 24:     led_turn_off(&led0portd);
-[e ( _led_turn_off (1 -> &U _led0portd `*CS274 ]
-"25
-[; ;app.c: 25:     _delay((unsigned long)((200)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"26
-[; ;app.c: 26:     led_init(&led0portd);
-[e ( _led_init (1 -> &U _led0portd `*CS274 ]
-"27
-[; ;app.c: 27:     _delay((unsigned long)((200)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"28
-[; ;app.c: 28:     led_turn_off(&led0portd);
-[e ( _led_turn_off (1 -> &U _led0portd `*CS274 ]
-"29
-[; ;app.c: 29:     _delay((unsigned long)((200)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"30
-[; ;app.c: 30:         led_turn_on(&led0portd);
-[e ( _led_turn_on (1 -> &U _led0portd `*CS274 ]
-"31
-[; ;app.c: 31:     while(1){
-[e :U 277 ]
-{
-"32
-[; ;app.c: 32:         _delay((unsigned long)((500)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"33
-[; ;app.c: 33:         led_toggle(&led0portd);
-[e ( _led_toggle (1 -> &U _led0portd `*CS274 ]
-"34
-[; ;app.c: 34:     }
+"8
+[; ;ECU_L/LED/led.c: 8:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"9
+[; ;ECU_L/LED/led.c: 9:     }
 }
-[e :U 276 ]
 [e $U 277  ]
-[e :U 278 ]
-"35
-[; ;app.c: 35: }
+"10
+[; ;ECU_L/LED/led.c: 10:     else{
+[e :U 276 ]
+{
+"11
+[; ;ECU_L/LED/led.c: 11:         ret = gpio_pin_initialize(&my_pin);
+[e = _ret ( _gpio_pin_initialize (1 -> &U _my_pin `*CS273 ]
+"12
+[; ;ECU_L/LED/led.c: 12:     }
+}
+[e :U 277 ]
+"13
+[; ;ECU_L/LED/led.c: 13:     return ret;
+[e ) _ret ]
+[e $UE 275  ]
+"14
+[; ;ECU_L/LED/led.c: 14: }
 [e :UE 275 ]
+}
+"15
+[; ;ECU_L/LED/led.c: 15: Std_ReturnType led_turn_on(const led_t* my_led){
+[v _led_turn_on `(uc ~T0 @X0 1 ef1`*CS274 ]
+{
+[e :U _led_turn_on ]
+[v _my_led `*CS274 ~T0 @X0 1 r1 ]
+[f ]
+"16
+[; ;ECU_L/LED/led.c: 16:     Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+[v F3049 `S273 ~T0 @X0 1 s ]
+[i F3049
+:U ..
+:U ..
+"17
+[; ;ECU_L/LED/led.c: 17:     pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, gpio_high};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _my_pin `S273 ~T0 @X0 1 a ]
+[e = _my_pin F3049 ]
+[e ; = . _my_pin 0 . *U _my_led 0 ; = . _my_pin 1 . *U _my_led 1 ; = . _my_pin 2 -> . `E2969 0 `uc = . _my_pin 3 -> . `E2965 1 `uc ]
+"18
+[; ;ECU_L/LED/led.c: 18:     if(my_led == ((void*)0)){
+[e $ ! == _my_led -> -> -> 0 `i `*v `*CS274 279  ]
+{
+"19
+[; ;ECU_L/LED/led.c: 19:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"20
+[; ;ECU_L/LED/led.c: 20:     }
+}
+[e $U 280  ]
+"21
+[; ;ECU_L/LED/led.c: 21:     else{
+[e :U 279 ]
+{
+"22
+[; ;ECU_L/LED/led.c: 22:         ret = gpio_pin_logic_write(&my_pin);
+[e = _ret ( _gpio_pin_logic_write (1 -> &U _my_pin `*CS273 ]
+"23
+[; ;ECU_L/LED/led.c: 23:     }
+}
+[e :U 280 ]
+"24
+[; ;ECU_L/LED/led.c: 24:     return ret;
+[e ) _ret ]
+[e $UE 278  ]
+"25
+[; ;ECU_L/LED/led.c: 25: }
+[e :UE 278 ]
+}
+"26
+[; ;ECU_L/LED/led.c: 26: Std_ReturnType led_turn_off(const led_t* my_led){
+[v _led_turn_off `(uc ~T0 @X0 1 ef1`*CS274 ]
+{
+[e :U _led_turn_off ]
+[v _my_led `*CS274 ~T0 @X0 1 r1 ]
+[f ]
+"27
+[; ;ECU_L/LED/led.c: 27:     Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+[v F3054 `S273 ~T0 @X0 1 s ]
+[i F3054
+:U ..
+:U ..
+"28
+[; ;ECU_L/LED/led.c: 28:     pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, gpio_low};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _my_pin `S273 ~T0 @X0 1 a ]
+[e = _my_pin F3054 ]
+[e ; = . _my_pin 0 . *U _my_led 0 ; = . _my_pin 1 . *U _my_led 1 ; = . _my_pin 2 -> . `E2969 0 `uc = . _my_pin 3 -> . `E2965 0 `uc ]
+"29
+[; ;ECU_L/LED/led.c: 29:     if(my_led == ((void*)0)){
+[e $ ! == _my_led -> -> -> 0 `i `*v `*CS274 282  ]
+{
+"30
+[; ;ECU_L/LED/led.c: 30:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"31
+[; ;ECU_L/LED/led.c: 31:     }
+}
+[e $U 283  ]
+"32
+[; ;ECU_L/LED/led.c: 32:     else{
+[e :U 282 ]
+{
+"33
+[; ;ECU_L/LED/led.c: 33:         ret = gpio_pin_logic_write(&my_pin);
+[e = _ret ( _gpio_pin_logic_write (1 -> &U _my_pin `*CS273 ]
+"34
+[; ;ECU_L/LED/led.c: 34:     }
+}
+[e :U 283 ]
+"35
+[; ;ECU_L/LED/led.c: 35:     return ret;
+[e ) _ret ]
+[e $UE 281  ]
+"36
+[; ;ECU_L/LED/led.c: 36: }
+[e :UE 281 ]
+}
+"37
+[; ;ECU_L/LED/led.c: 37: Std_ReturnType led_toggle(const led_t* my_led){
+[v _led_toggle `(uc ~T0 @X0 1 ef1`*CS274 ]
+{
+[e :U _led_toggle ]
+[v _my_led `*CS274 ~T0 @X0 1 r1 ]
+[f ]
+"38
+[; ;ECU_L/LED/led.c: 38:     Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+[v F3059 `S273 ~T0 @X0 1 s ]
+[i F3059
+:U ..
+:U ..
+"39
+[; ;ECU_L/LED/led.c: 39:     pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, my_led->led_status};
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+..
+..
+]
+[v _my_pin `S273 ~T0 @X0 1 a ]
+[e = _my_pin F3059 ]
+[e ; = . _my_pin 0 . *U _my_led 0 ; = . _my_pin 1 . *U _my_led 1 ; = . _my_pin 2 -> . `E2969 0 `uc = . _my_pin 3 . *U _my_led 2 ]
+"40
+[; ;ECU_L/LED/led.c: 40:     if(my_led == ((void*)0)){
+[e $ ! == _my_led -> -> -> 0 `i `*v `*CS274 285  ]
+{
+"41
+[; ;ECU_L/LED/led.c: 41:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"42
+[; ;ECU_L/LED/led.c: 42:     }
+}
+[e $U 286  ]
+"43
+[; ;ECU_L/LED/led.c: 43:     else{
+[e :U 285 ]
+{
+"44
+[; ;ECU_L/LED/led.c: 44:         ret = gpio_pin_logic_toggle(&my_pin);
+[e = _ret ( _gpio_pin_logic_toggle (1 -> &U _my_pin `*CS273 ]
+"45
+[; ;ECU_L/LED/led.c: 45:     }
+}
+[e :U 286 ]
+"46
+[; ;ECU_L/LED/led.c: 46:     return ret;
+[e ) _ret ]
+[e $UE 284  ]
+"47
+[; ;ECU_L/LED/led.c: 47: }
+[e :UE 284 ]
 }

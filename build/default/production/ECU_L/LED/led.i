@@ -1,4 +1,4 @@
-# 1 "app.c"
+# 1 "ECU_L/LED/led.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,14 +6,17 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "app.c" 2
+# 1 "ECU_L/LED/led.c" 2
 
+# 1 "ECU_L/LED/led.h" 1
+# 10 "ECU_L/LED/led.h"
+# 1 "ECU_L/LED/../../MCAL/GPIO/gpio.h" 1
+# 10 "ECU_L/LED/../../MCAL/GPIO/gpio.h"
+# 1 "ECU_L/LED/../../MCAL/GPIO/gpio_cfg.h" 1
+# 10 "ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
 
-
-
-
-
-
+# 1 "ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 1
+# 13 "ECU_L/LED/../../MCAL/GPIO/../mcal_types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -177,7 +180,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "app.c" 2
+# 13 "ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 3
@@ -242,19 +245,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 9 "app.c" 2
+# 14 "ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
 
-# 1 "./app.h" 1
-# 11 "./app.h"
-# 1 "./ECU_L/LED/led.h" 1
-# 10 "./ECU_L/LED/led.h"
-# 1 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 1
-# 10 "./ECU_L/LED/../../MCAL/GPIO/gpio.h"
-# 1 "./ECU_L/LED/../../MCAL/GPIO/gpio_cfg.h" 1
-# 10 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
-
-# 1 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 1
-# 15 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -310,7 +302,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 15 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
+# 15 "ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
 
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 3
@@ -4687,7 +4679,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
-# 16 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
+# 16 "ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
 
 
 
@@ -4699,8 +4691,8 @@ typedef signed short sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
-# 23 "./ECU_L/LED/../../MCAL/GPIO/gpio.h"
+# 11 "ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
+# 23 "ECU_L/LED/../../MCAL/GPIO/gpio.h"
 typedef enum {
             gpio_low,
             gpio_high
@@ -4751,7 +4743,7 @@ Std_ReturnType gpio_port_direction_stat(port_index_t my_port , uint8 *retdirecti
 Std_ReturnType gpio_port_logic_write(port_index_t my_port, uint8 my_logic);
 Std_ReturnType gpio_port_logic_read(port_index_t my_port , uint8 *retlogic);
 Std_ReturnType gpio_port_logic_toggle(port_index_t my_port);
-# 10 "./ECU_L/LED/led.h" 2
+# 10 "ECU_L/LED/led.h" 2
 
 
 typedef enum{
@@ -4769,31 +4761,50 @@ Std_ReturnType led_init(const led_t* my_led);
 Std_ReturnType led_turn_on(const led_t* my_led);
 Std_ReturnType led_turn_off(const led_t* my_led);
 Std_ReturnType led_toggle(const led_t* my_led);
-# 11 "./app.h" 2
-# 10 "app.c" 2
+# 2 "ECU_L/LED/led.c" 2
 
 
-
-
-led_t led0portd = {port_A, 0, 1};
-
-
-int main() {
-    led_init(&led0portd);
-    _delay((unsigned long)((200)*(4000000UL/4000.0)));
-    led_turn_off(&led0portd);
-    _delay((unsigned long)((200)*(4000000UL/4000.0)));
-    led_init(&led0portd);
-    _delay((unsigned long)((200)*(4000000UL/4000.0)));
-    led_turn_off(&led0portd);
-    _delay((unsigned long)((200)*(4000000UL/4000.0)));
-    led_init(&led0portd);
-    _delay((unsigned long)((200)*(4000000UL/4000.0)));
-    led_turn_off(&led0portd);
-    _delay((unsigned long)((200)*(4000000UL/4000.0)));
-        led_turn_on(&led0portd);
-    while(1){
-        _delay((unsigned long)((500)*(4000000UL/4000.0)));
-        led_toggle(&led0portd);
+Std_ReturnType led_init(const led_t* my_led){
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, my_led->led_status};
+    if(my_led == ((void*)0)){
+        ret = (Std_ReturnType)0x00;
     }
+    else{
+        ret = gpio_pin_initialize(&my_pin);
+    }
+    return ret;
+}
+Std_ReturnType led_turn_on(const led_t* my_led){
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, gpio_high};
+    if(my_led == ((void*)0)){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+        ret = gpio_pin_logic_write(&my_pin);
+    }
+    return ret;
+}
+Std_ReturnType led_turn_off(const led_t* my_led){
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, gpio_low};
+    if(my_led == ((void*)0)){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+        ret = gpio_pin_logic_write(&my_pin);
+    }
+    return ret;
+}
+Std_ReturnType led_toggle(const led_t* my_led){
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    pin_config_t my_pin = {my_led->led_port, my_led->led_pin, gpio_output, my_led->led_status};
+    if(my_led == ((void*)0)){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+        ret = gpio_pin_logic_toggle(&my_pin);
+    }
+    return ret;
 }

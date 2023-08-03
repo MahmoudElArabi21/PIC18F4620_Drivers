@@ -4780,6 +4780,7 @@ Std_ReturnType gpio_pin_direction_stat(const pin_config_t *my_pin, direction_t *
         *retdirection = ((*tris_regs[my_pin->port]>>my_pin->pin) & 1);
     }
 }
+
 Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin){
     Std_ReturnType ret = (Std_ReturnType)0x01;
     if ((((void*)0) == my_pin) || (my_pin->pin) > 7){
@@ -4856,7 +4857,7 @@ Std_ReturnType gpio_port_logic_write(port_index_t my_port, uint8 my_logic){
         ret = (Std_ReturnType)0x00;
     }
     else{
-        *lat_regs[my_port] = my_logic;
+        *port_regs[my_port] = my_logic;
     }
     return ret;
 }

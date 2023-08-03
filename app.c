@@ -9,11 +9,27 @@
 #include <stdlib.h>
 #include "app.h"
 
-pin_config_t pin0_portd = {port_A, pin_0, gpio_output, gpio_high};
+
+
+led_t led0portd = {port_A, 0, 1};
+
+
 int main() {
-    gpio_port_direction_init(port_D, 64);
-    while(1){
+    led_init(&led0portd);
     __delay_ms(200);
-    gpio_port_logic_toggle(port_D);
+    led_turn_off(&led0portd);
+    __delay_ms(200);
+    led_init(&led0portd);
+    __delay_ms(200);
+    led_turn_off(&led0portd);
+    __delay_ms(200);
+    led_init(&led0portd);
+    __delay_ms(200);
+    led_turn_off(&led0portd);
+    __delay_ms(200);
+        led_turn_on(&led0portd);
+    while(1){
+        __delay_ms(500);
+        led_toggle(&led0portd);
     }
 }
