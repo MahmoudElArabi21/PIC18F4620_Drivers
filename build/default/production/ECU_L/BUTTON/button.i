@@ -1,4 +1,4 @@
-# 1 "app.c"
+# 1 "ECU_L/BUTTON/button.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,14 +6,17 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "app.c" 2
+# 1 "ECU_L/BUTTON/button.c" 2
 
+# 1 "ECU_L/BUTTON/button.h" 1
+# 11 "ECU_L/BUTTON/button.h"
+# 1 "ECU_L/BUTTON/../../MCAL/GPIO/gpio.h" 1
+# 10 "ECU_L/BUTTON/../../MCAL/GPIO/gpio.h"
+# 1 "ECU_L/BUTTON/../../MCAL/GPIO/gpio_cfg.h" 1
+# 10 "ECU_L/BUTTON/../../MCAL/GPIO/gpio.h" 2
 
-
-
-
-
-
+# 1 "ECU_L/BUTTON/../../MCAL/GPIO/../mcal_types.h" 1
+# 13 "ECU_L/BUTTON/../../MCAL/GPIO/../mcal_types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -177,7 +180,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "app.c" 2
+# 13 "ECU_L/BUTTON/../../MCAL/GPIO/../mcal_types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 3
@@ -242,19 +245,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 9 "app.c" 2
+# 14 "ECU_L/BUTTON/../../MCAL/GPIO/../mcal_types.h" 2
 
-# 1 "./app.h" 1
-# 11 "./app.h"
-# 1 "./ECU_L/LED/led.h" 1
-# 10 "./ECU_L/LED/led.h"
-# 1 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 1
-# 10 "./ECU_L/LED/../../MCAL/GPIO/gpio.h"
-# 1 "./ECU_L/LED/../../MCAL/GPIO/gpio_cfg.h" 1
-# 10 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
-
-# 1 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 1
-# 15 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -310,7 +302,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 15 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
+# 15 "ECU_L/BUTTON/../../MCAL/GPIO/../mcal_types.h" 2
 
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 3
@@ -4687,7 +4679,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
-# 16 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
+# 16 "ECU_L/BUTTON/../../MCAL/GPIO/../mcal_types.h" 2
 
 
 
@@ -4699,8 +4691,8 @@ typedef signed short sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
-# 23 "./ECU_L/LED/../../MCAL/GPIO/gpio.h"
+# 11 "ECU_L/BUTTON/../../MCAL/GPIO/gpio.h" 2
+# 23 "ECU_L/BUTTON/../../MCAL/GPIO/gpio.h"
 typedef enum {
             gpio_low,
             gpio_high
@@ -4751,28 +4743,9 @@ Std_ReturnType gpio_port_direction_stat(port_index_t my_port , uint8 *retdirecti
 Std_ReturnType gpio_port_logic_write(port_index_t my_port, uint8 my_logic);
 Std_ReturnType gpio_port_logic_read(port_index_t my_port , uint8 *retlogic);
 Std_ReturnType gpio_port_logic_toggle(port_index_t my_port);
-# 10 "./ECU_L/LED/led.h" 2
+# 11 "ECU_L/BUTTON/button.h" 2
 
 
-typedef enum{
-    led_off,
-    led_on,
-}led_status_t;
-
-typedef struct{
-    uint8 led_port :3;
-    uint8 led_pin :3;
-    uint8 led_status :1;
-}led_t;
-
-Std_ReturnType led_init(const led_t* my_led);
-Std_ReturnType led_turn_on(const led_t* my_led);
-Std_ReturnType led_turn_off(const led_t* my_led);
-Std_ReturnType led_toggle(const led_t* my_led);
-# 11 "./app.h" 2
-
-# 1 "./ECU_L/BUTTON/button.h" 1
-# 13 "./ECU_L/BUTTON/button.h"
 typedef enum{
     btn_pressed,
     btn_released,
@@ -4791,54 +4764,43 @@ typedef struct {
 
 Std_ReturnType button_inittialze(button_t *my_btn);
 Std_ReturnType button_read_status(button_t *my_btn, btn_press_state_t *btn_state);
-# 12 "./app.h" 2
-# 10 "app.c" 2
+# 2 "ECU_L/BUTTON/button.c" 2
 
 
-
-led_t led1 = {port_C, pin_0, gpio_low};
-led_t led2 = {port_C, pin_1, gpio_low};
-
-button_t btn_high = {
-    .button_pin.port = port_D,
-    .button_pin.pin = pin_0,
-    .button_pin.direction = gpio_input,
-    .button_pin.logic = gpio_low,
-    .button_activate = btn_active_high,
-    .button_state = btn_released
-};
-
-button_t btn_low = {
-    .button_pin.port = port_C,
-    .button_pin.pin = pin_2,
-    .button_pin.direction = gpio_input,
-    .button_pin.logic = gpio_high,
-    .button_activate = btn_active_low,
-    .button_state = btn_released
-};
-int main() {
-    led_init(&led1);
-    led_init(&led2);
-    button_inittialze(&btn_high);
-    button_inittialze(&btn_low);
-    btn_press_state_t btn_high_status = btn_released;
-    btn_press_state_t btn_low_status = btn_released;
-    while(1){
-        button_read_status(&btn_high, &btn_high_status);
-        button_read_status(&btn_low, &btn_low_status);
-
-        if(btn_pressed == btn_high_status){
-            led_turn_on(&led1);
+Std_ReturnType button_inittialze(button_t *my_btn){
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    if(((void*)0) == my_btn){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+        ret = gpio_pin_initialize(&(my_btn->button_pin));
+    }
+    return ret;
+}
+Std_ReturnType button_read_status(button_t *my_btn, btn_press_state_t *btn_state){
+    Std_ReturnType ret = (Std_ReturnType)0x00;
+    logic_t Pin_Logic_Status = gpio_low;
+    if((((void*)0) == my_btn) || (((void*)0) == btn_state)){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+        gpio_pin_logic_read(&(my_btn->button_pin), &Pin_Logic_Status);
+        if(btn_active_high == my_btn->button_activate){
+            if(gpio_high == Pin_Logic_Status){
+                *btn_state = btn_pressed;
+            }
+            else {
+                *btn_state = btn_released;
+            }
         }
-        else{
-            led_turn_off(&led1);
-        }
-
-        if(btn_pressed == btn_low_status){
-            led_turn_on(&led2);
-        }
-        else{
-            led_turn_off(&led2);
+        else if(btn_active_low == my_btn->button_activate){
+            if(gpio_high == Pin_Logic_Status){
+                *btn_state = btn_released;
+            }
+            else {
+                *btn_state = btn_pressed;
+            }
         }
     }
+    return ret;
 }

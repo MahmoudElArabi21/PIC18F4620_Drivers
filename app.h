@@ -9,6 +9,7 @@
 #define	APP_H
 
 #include "ECU_L/LED/led.h"
+#include "ECU_L/BUTTON/button.h"
 
 #endif	/* APP_H */
 

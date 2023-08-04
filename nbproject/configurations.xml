@@ -5,6 +5,9 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="ECU_L" displayName="ECU_L" projectFiles="true">
+        <logicalFolder name="BUTTON" displayName="BUTTON" projectFiles="true">
+          <itemPath>ECU_L/BUTTON/button.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECU_L/LED/led.h</itemPath>
         </logicalFolder>
@@ -26,6 +29,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="ECU_L" displayName="ECU_L" projectFiles="true">
+        <logicalFolder name="BUTTON" displayName="BUTTON" projectFiles="true">
+          <itemPath>ECU_L/BUTTON/button.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECU_L/LED/led.c</itemPath>
         </logicalFolder>

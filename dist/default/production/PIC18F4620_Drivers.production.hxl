@@ -10,11 +10,11 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 3h		(dist/default/production\PIC18F4620_Drivers.production.hex)
-  F98Bh - FFFFh		(dist/default/production\PIC18F4620_Drivers.production.hex)
+  F954h - FFFFh		(dist/default/production\PIC18F4620_Drivers.production.hex)
   200000h - 200007h		(dist/default/production\PIC18F4620_Drivers.production.hex)
   300000h - 30000Dh		(dist/default/production\PIC18F4620_Drivers.production.hex)
  Unused ranges:
-  4h - F98Ah
+  4h - F953h
   10000h - 1FFFFFh
   200008h - 2FFFFFh
 
@@ -27,7 +27,10 @@
 ----------------------------------------------------------
 00000000 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
-0000F980 | -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1
+0000F950 | -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000F960 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000F970 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+0000F980 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000F990 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000F9A0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 0000F9B0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
