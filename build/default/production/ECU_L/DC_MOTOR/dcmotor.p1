@@ -1,28 +1,22 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"52 ECU_L/BUTTON/../../MCAL/GPIO/gpio.h
-[; ;ECU_L/BUTTON/../../MCAL/GPIO/gpio.h: 52: typedef struct{
+"52 ECU_L/DC_MOTOR/../../MCAL/GPIO/gpio.h
+[; ;ECU_L/DC_MOTOR/../../MCAL/GPIO/gpio.h: 52: typedef struct{
 [s S273 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S273 . port pin direction logic ]
-"4 ECU_L/BUTTON/button.c
-[; ;ECU_L/BUTTON/button.c: 4: Std_ReturnType button_inittialze(button_t *my_btn){
-[c E3025 0 1 .. ]
-[n E3025 . btn_pressed btn_released  ]
-[c E3029 0 1 .. ]
-[n E3029 . btn_active_high btn_active_low  ]
-"23 ECU_L/BUTTON/button.h
-[; ;ECU_L/BUTTON/button.h: 23: typedef struct {
-[s S274 `S273 1 `E3025 1 `E3029 1 ]
-[n S274 . button_pin button_state button_activate ]
-"66 ECU_L/BUTTON/../../MCAL/GPIO/gpio.h
-[; ;ECU_L/BUTTON/../../MCAL/GPIO/gpio.h: 66: Std_ReturnType gpio_pin_initialize(const pin_config_t *my_pin);
+"17 ECU_L/DC_MOTOR/dcmotor.h
+[; ;ECU_L/DC_MOTOR/dcmotor.h: 17: typedef struct {
+[s S274 `S273 -> 2 `i ]
+[n S274 . dcmotorpins ]
+"66 ECU_L/DC_MOTOR/../../MCAL/GPIO/gpio.h
+[; ;ECU_L/DC_MOTOR/../../MCAL/GPIO/gpio.h: 66: Std_ReturnType gpio_pin_initialize(const pin_config_t *my_pin);
 [v _gpio_pin_initialize `(uc ~T0 @X0 0 ef1`*CS273 ]
-"16 ECU_L/BUTTON/button.c
-[; ;ECU_L/BUTTON/button.c: 16:     logic_t Pin_Logic_Status = gpio_low;
+"63
+[; ;ECU_L/DC_MOTOR/../../MCAL/GPIO/gpio.h: 63: Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin, uint8 logic);
+[v _gpio_pin_logic_write `(uc ~T0 @X0 0 ef2`*CS273`uc ]
+"20 ECU_L/DC_MOTOR/dcmotor.c
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 20:         ret = gpio_pin_logic_write(&(my_dcmotor->dcmotorpins[0]), gpio_high);
 [c E2965 0 1 .. ]
 [n E2965 . gpio_low gpio_high  ]
-"64 ECU_L/BUTTON/../../MCAL/GPIO/gpio.h
-[; ;ECU_L/BUTTON/../../MCAL/GPIO/gpio.h: 64: Std_ReturnType gpio_pin_logic_read(const pin_config_t *my_pin, logic_t *retlogic);
-[v _gpio_pin_logic_read `(uc ~T0 @X0 0 ef2`*CS273`*E2965 ]
 "55 C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -434,152 +428,179 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6716
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6716: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"4 ECU_L/BUTTON/button.c
-[; ;ECU_L/BUTTON/button.c: 4: Std_ReturnType button_inittialze(button_t *my_btn){
-[v _button_inittialze `(uc ~T0 @X0 1 ef1`*S274 ]
+"3 ECU_L/DC_MOTOR/dcmotor.c
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 3: Std_ReturnType dc_motor_initialize(const dcmotor_t *my_dcmotor){
+[v _dc_motor_initialize `(uc ~T0 @X0 1 ef1`*CS274 ]
 {
-[e :U _button_inittialze ]
-[v _my_btn `*S274 ~T0 @X0 1 r1 ]
+[e :U _dc_motor_initialize ]
+[v _my_dcmotor `*CS274 ~T0 @X0 1 r1 ]
 [f ]
-"5
-[; ;ECU_L/BUTTON/button.c: 5:     Std_ReturnType ret = (Std_ReturnType)0x01;
+"4
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 4:     Std_ReturnType ret = (Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-"6
-[; ;ECU_L/BUTTON/button.c: 6:     if(((void*)0) == my_btn){
-[e $ ! == -> -> -> 0 `i `*v `*S274 _my_btn 276  ]
+"5
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 5:     if(((void*)0) == my_dcmotor){
+[e $ ! == -> -> -> 0 `i `*v `*CS274 _my_dcmotor 276  ]
 {
-"7
-[; ;ECU_L/BUTTON/button.c: 7:         ret = (Std_ReturnType)0x00;
+"6
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 6:         ret = (Std_ReturnType)0x00;
 [e = _ret -> -> 0 `i `uc ]
-"8
-[; ;ECU_L/BUTTON/button.c: 8:     }
+"7
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 7:     }
 }
 [e $U 277  ]
-"9
-[; ;ECU_L/BUTTON/button.c: 9:     else{
+"8
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 8:     else{
 [e :U 276 ]
 {
+"9
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 9:         ret = gpio_pin_initialize(&(my_dcmotor->dcmotorpins[0]));
+[e = _ret ( _gpio_pin_initialize (1 &U *U + &U . *U _my_dcmotor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _my_dcmotor 0 `ui `ux ]
 "10
-[; ;ECU_L/BUTTON/button.c: 10:         ret = gpio_pin_initialize(&(my_btn->button_pin));
-[e = _ret ( _gpio_pin_initialize (1 -> &U . *U _my_btn 0 `*CS273 ]
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 10:         ret = gpio_pin_initialize(&(my_dcmotor->dcmotorpins[1]));
+[e = _ret ( _gpio_pin_initialize (1 &U *U + &U . *U _my_dcmotor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _my_dcmotor 0 `ui `ux ]
 "11
-[; ;ECU_L/BUTTON/button.c: 11:     }
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 11:     }
 }
 [e :U 277 ]
 "12
-[; ;ECU_L/BUTTON/button.c: 12:     return ret;
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 12:     return ret;
 [e ) _ret ]
 [e $UE 275  ]
 "13
-[; ;ECU_L/BUTTON/button.c: 13: }
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 13: }
 [e :UE 275 ]
 }
 "14
-[; ;ECU_L/BUTTON/button.c: 14: Std_ReturnType button_read_status(button_t *my_btn, btn_press_state_t *btn_state){
-[v _button_read_status `(uc ~T0 @X0 1 ef2`*S274`*E3025 ]
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 14: Std_ReturnType dc_motor_move_right(const dcmotor_t *my_dcmotor){
+[v _dc_motor_move_right `(uc ~T0 @X0 1 ef1`*CS274 ]
 {
-[e :U _button_read_status ]
-[v _my_btn `*S274 ~T0 @X0 1 r1 ]
-[v _btn_state `*E3025 ~T0 @X0 1 r2 ]
+[e :U _dc_motor_move_right ]
+[v _my_dcmotor `*CS274 ~T0 @X0 1 r1 ]
 [f ]
 "15
-[; ;ECU_L/BUTTON/button.c: 15:     Std_ReturnType ret = (Std_ReturnType)0x00;
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 15:     Std_ReturnType ret = (Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
-[e = _ret -> -> 0 `i `uc ]
+[e = _ret -> -> 1 `i `uc ]
 "16
-[; ;ECU_L/BUTTON/button.c: 16:     logic_t Pin_Logic_Status = gpio_low;
-[v _Pin_Logic_Status `E2965 ~T0 @X0 1 a ]
-[e = _Pin_Logic_Status . `E2965 0 ]
-"17
-[; ;ECU_L/BUTTON/button.c: 17:     if((((void*)0) == my_btn) || (((void*)0) == btn_state)){
-[e $ ! || == -> -> -> 0 `i `*v `*S274 _my_btn == -> -> -> 0 `i `*v `*E3025 _btn_state 279  ]
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 16:     if(((void*)0) == my_dcmotor){
+[e $ ! == -> -> -> 0 `i `*v `*CS274 _my_dcmotor 279  ]
 {
-"18
-[; ;ECU_L/BUTTON/button.c: 18:         ret = (Std_ReturnType)0x00;
+"17
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 17:         ret = (Std_ReturnType)0x00;
 [e = _ret -> -> 0 `i `uc ]
-"19
-[; ;ECU_L/BUTTON/button.c: 19:     }
+"18
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 18:     }
 }
 [e $U 280  ]
-"20
-[; ;ECU_L/BUTTON/button.c: 20:     else{
+"19
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 19:     else{
 [e :U 279 ]
 {
+"20
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 20:         ret = gpio_pin_logic_write(&(my_dcmotor->dcmotorpins[0]), gpio_high);
+[e = _ret ( _gpio_pin_logic_write (2 , &U *U + &U . *U _my_dcmotor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _my_dcmotor 0 `ui `ux -> . `E2965 1 `uc ]
 "21
-[; ;ECU_L/BUTTON/button.c: 21:         gpio_pin_logic_read(&(my_btn->button_pin), &Pin_Logic_Status);
-[e ( _gpio_pin_logic_read (2 , -> &U . *U _my_btn 0 `*CS273 &U _Pin_Logic_Status ]
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 21:         ret = gpio_pin_logic_write(&(my_dcmotor->dcmotorpins[1]), gpio_low);
+[e = _ret ( _gpio_pin_logic_write (2 , &U *U + &U . *U _my_dcmotor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _my_dcmotor 0 `ui `ux -> . `E2965 0 `uc ]
 "22
-[; ;ECU_L/BUTTON/button.c: 22:         if(btn_active_high == my_btn->button_activate){
-[e $ ! == -> . `E3029 0 `ui -> . *U _my_btn 2 `ui 281  ]
-{
-"23
-[; ;ECU_L/BUTTON/button.c: 23:             if(gpio_high == Pin_Logic_Status){
-[e $ ! == -> . `E2965 1 `ui -> _Pin_Logic_Status `ui 282  ]
-{
-"24
-[; ;ECU_L/BUTTON/button.c: 24:                 *btn_state = btn_pressed;
-[e = *U _btn_state . `E3025 0 ]
-"25
-[; ;ECU_L/BUTTON/button.c: 25:             }
-}
-[e $U 283  ]
-"26
-[; ;ECU_L/BUTTON/button.c: 26:             else {
-[e :U 282 ]
-{
-"27
-[; ;ECU_L/BUTTON/button.c: 27:                 *btn_state = btn_released;
-[e = *U _btn_state . `E3025 1 ]
-"28
-[; ;ECU_L/BUTTON/button.c: 28:             }
-}
-[e :U 283 ]
-"29
-[; ;ECU_L/BUTTON/button.c: 29:         }
-}
-[e $U 284  ]
-"30
-[; ;ECU_L/BUTTON/button.c: 30:         else if(btn_active_low == my_btn->button_activate){
-[e :U 281 ]
-[e $ ! == -> . `E3029 1 `ui -> . *U _my_btn 2 `ui 285  ]
-{
-"31
-[; ;ECU_L/BUTTON/button.c: 31:             if(gpio_high == Pin_Logic_Status){
-[e $ ! == -> . `E2965 1 `ui -> _Pin_Logic_Status `ui 286  ]
-{
-"32
-[; ;ECU_L/BUTTON/button.c: 32:                 *btn_state = btn_released;
-[e = *U _btn_state . `E3025 1 ]
-"33
-[; ;ECU_L/BUTTON/button.c: 33:             }
-}
-[e $U 287  ]
-"34
-[; ;ECU_L/BUTTON/button.c: 34:             else {
-[e :U 286 ]
-{
-"35
-[; ;ECU_L/BUTTON/button.c: 35:                 *btn_state = btn_pressed;
-[e = *U _btn_state . `E3025 0 ]
-"36
-[; ;ECU_L/BUTTON/button.c: 36:             }
-}
-[e :U 287 ]
-"37
-[; ;ECU_L/BUTTON/button.c: 37:         }
-}
-[e :U 285 ]
-[e :U 284 ]
-"38
-[; ;ECU_L/BUTTON/button.c: 38:     }
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 22:     }
 }
 [e :U 280 ]
-"39
-[; ;ECU_L/BUTTON/button.c: 39:     return ret;
+"23
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 23:     return ret;
 [e ) _ret ]
 [e $UE 278  ]
-"40
-[; ;ECU_L/BUTTON/button.c: 40: }
+"24
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 24: }
 [e :UE 278 ]
+}
+"25
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 25: Std_ReturnType dc_motor_move_left(const dcmotor_t *my_dcmotor){
+[v _dc_motor_move_left `(uc ~T0 @X0 1 ef1`*CS274 ]
+{
+[e :U _dc_motor_move_left ]
+[v _my_dcmotor `*CS274 ~T0 @X0 1 r1 ]
+[f ]
+"26
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 26:     Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"27
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 27:     if(((void*)0) == my_dcmotor){
+[e $ ! == -> -> -> 0 `i `*v `*CS274 _my_dcmotor 282  ]
+{
+"28
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 28:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"29
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 29:     }
+}
+[e $U 283  ]
+"30
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 30:     else{
+[e :U 282 ]
+{
+"31
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 31:         ret = gpio_pin_logic_write(&(my_dcmotor->dcmotorpins[0]), gpio_low);
+[e = _ret ( _gpio_pin_logic_write (2 , &U *U + &U . *U _my_dcmotor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _my_dcmotor 0 `ui `ux -> . `E2965 0 `uc ]
+"32
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 32:         ret = gpio_pin_logic_write(&(my_dcmotor->dcmotorpins[1]), gpio_high);
+[e = _ret ( _gpio_pin_logic_write (2 , &U *U + &U . *U _my_dcmotor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _my_dcmotor 0 `ui `ux -> . `E2965 1 `uc ]
+"33
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 33:     }
+}
+[e :U 283 ]
+"34
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 34:     return ret;
+[e ) _ret ]
+[e $UE 281  ]
+"35
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 35: }
+[e :UE 281 ]
+}
+"36
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 36: Std_ReturnType dc_motor_stop(const dcmotor_t *my_dcmotor){
+[v _dc_motor_stop `(uc ~T0 @X0 1 ef1`*CS274 ]
+{
+[e :U _dc_motor_stop ]
+[v _my_dcmotor `*CS274 ~T0 @X0 1 r1 ]
+[f ]
+"37
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 37:     Std_ReturnType ret = (Std_ReturnType)0x01;
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 1 `i `uc ]
+"38
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 38:     if(((void*)0) == my_dcmotor){
+[e $ ! == -> -> -> 0 `i `*v `*CS274 _my_dcmotor 285  ]
+{
+"39
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 39:         ret = (Std_ReturnType)0x00;
+[e = _ret -> -> 0 `i `uc ]
+"40
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 40:     }
+}
+[e $U 286  ]
+"41
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 41:     else{
+[e :U 285 ]
+{
+"42
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 42:         ret = gpio_pin_logic_write(&(my_dcmotor->dcmotorpins[0]), gpio_low);
+[e = _ret ( _gpio_pin_logic_write (2 , &U *U + &U . *U _my_dcmotor 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U _my_dcmotor 0 `ui `ux -> . `E2965 0 `uc ]
+"43
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 43:         ret = gpio_pin_logic_write(&(my_dcmotor->dcmotorpins[1]), gpio_low);
+[e = _ret ( _gpio_pin_logic_write (2 , &U *U + &U . *U _my_dcmotor 0 * -> -> -> 1 `i `ui `ux -> -> # *U &U . *U _my_dcmotor 0 `ui `ux -> . `E2965 0 `uc ]
+"44
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 44:     }
+}
+[e :U 286 ]
+"45
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 45:     return ret;
+[e ) _ret ]
+[e $UE 284  ]
+"46
+[; ;ECU_L/DC_MOTOR/dcmotor.c: 46: }
+[e :UE 284 ]
 }

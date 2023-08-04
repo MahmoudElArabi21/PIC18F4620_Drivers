@@ -5,4 +5,6 @@ ECU_L/LED/led.h  \
 ECU_L/LED/../../MCAL/GPIO/gpio.h  \
 ECU_L/LED/../../MCAL/GPIO/gpio_cfg.h  \
 ECU_L/LED/../../MCAL/GPIO/../mcal_types.h  \
-ECU_L/BUTTON/button.h 
+ECU_L/BUTTON/button.h  \
+ECU_L/RELAY/relay.h  \
+ECU_L/DC_MOTOR/dcmotor.h 

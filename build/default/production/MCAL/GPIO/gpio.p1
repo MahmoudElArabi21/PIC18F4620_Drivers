@@ -619,11 +619,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 282 ]
 }
 "41
-[; ;MCAL/GPIO/gpio.c: 41: Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin){
-[v _gpio_pin_logic_write `(uc ~T0 @X0 1 ef1`*CS273 ]
+[; ;MCAL/GPIO/gpio.c: 41: Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin, uint8 logic){
+[v _gpio_pin_logic_write `(uc ~T0 @X0 1 ef2`*CS273`uc ]
 {
 [e :U _gpio_pin_logic_write ]
 [v _my_pin `*CS273 ~T0 @X0 1 r1 ]
+[v _logic `uc ~T0 @X0 1 r2 ]
 [f ]
 "42
 [; ;MCAL/GPIO/gpio.c: 42:     Std_ReturnType ret = (Std_ReturnType)0x01;
@@ -645,7 +646,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 286 ]
 {
 "47
-[; ;MCAL/GPIO/gpio.c: 47:         switch(my_pin->logic){
+[; ;MCAL/GPIO/gpio.c: 47:         switch(logic){
 [e $U 289  ]
 {
 "48
@@ -675,7 +676,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 288  ]
 [e :U 289 ]
-[e [\ -> . *U _my_pin 3 `i , $ . `E2965 0 290
+[e [\ -> _logic `i , $ . `E2965 0 290
  , $ . `E2965 1 291
  292 ]
 [e :U 288 ]
@@ -804,8 +805,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MCAL/GPIO/gpio.c: 85:         ret = gpio_pin_direction_init(my_pin);
 [e = _ret ( _gpio_pin_direction_init (1 _my_pin ]
 "86
-[; ;MCAL/GPIO/gpio.c: 86:         ret = gpio_pin_logic_write(my_pin);
-[e = _ret ( _gpio_pin_logic_write (1 _my_pin ]
+[; ;MCAL/GPIO/gpio.c: 86:         ret = gpio_pin_logic_write(my_pin, my_pin->logic);
+[e = _ret ( _gpio_pin_logic_write (2 , _my_pin . *U _my_pin 3 ]
 "87
 [; ;MCAL/GPIO/gpio.c: 87:     }
 }

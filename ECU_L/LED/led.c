@@ -19,7 +19,7 @@ Std_ReturnType led_turn_on(const led_t* my_led){
         ret = E_NOT_OK;
     }
     else{
-        ret = gpio_pin_logic_write(&my_pin);
+        ret = gpio_pin_logic_write(&my_pin, gpio_high);
     }
     return ret;
 }
@@ -30,7 +30,7 @@ Std_ReturnType led_turn_off(const led_t* my_led){
         ret = E_NOT_OK;
     }
     else{
-        ret = gpio_pin_logic_write(&my_pin);
+        ret = gpio_pin_logic_write(&my_pin, gpio_low);
     }
     return ret;
 }

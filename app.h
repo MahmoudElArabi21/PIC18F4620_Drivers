@@ -10,6 +10,8 @@
 
 #include "ECU_L/LED/led.h"
 #include "ECU_L/BUTTON/button.h"
+#include "ECU_L/RELAY/relay.h"
+#include "ECU_L/DC_MOTOR/dcmotor.h"
 
 #endif	/* APP_H */
 

@@ -9,12 +9,24 @@
 #include <stdlib.h>
 #include "app.h"
 
-
-led_t led1 = {port_C, pin_0, gpio_low};
-led_t led2 = {port_C, pin_1, gpio_low};
-
+dcmotor_t dcmotor1 = {  .dcmotorpins[0].port = port_D,
+                        .dcmotorpins[0].pin = pin_0,
+                        .dcmotorpins[0].direction= 0,
+                        .dcmotorpins[0].logic = 0,
+                        .dcmotorpins[1].port = port_D,
+                        .dcmotorpins[1].pin = pin_1,
+                        .dcmotorpins[1].direction= 0,
+                        .dcmotorpins[1].logic = 0};
+dcmotor_t dcmotor2 = {  .dcmotorpins[0].port = port_D,
+                        .dcmotorpins[0].pin = pin_2,
+                        .dcmotorpins[0].direction= 0,
+                        .dcmotorpins[0].logic = 0,
+                        .dcmotorpins[1].port = port_D,
+                        .dcmotorpins[1].pin = pin_3,
+                        .dcmotorpins[1].direction= 0,
+                        .dcmotorpins[1].logic = 0};
 button_t btn_high = {
-    .button_pin.port = port_D,
+    .button_pin.port = port_B,
     .button_pin.pin = pin_0,
     .button_pin.direction = gpio_input,
     .button_pin.logic = gpio_low,
@@ -23,37 +35,29 @@ button_t btn_high = {
 };
 
 button_t btn_low = {
-    .button_pin.port = port_C,
-    .button_pin.pin = pin_2,
+    .button_pin.port = port_B,
+    .button_pin.pin = pin_1,
     .button_pin.direction = gpio_input,
     .button_pin.logic = gpio_high,
     .button_activate = btn_active_low,
     .button_state = btn_released
 };
+
+
 int main() {
-    led_init(&led1);
-    led_init(&led2);
-    button_inittialze(&btn_high);
-    button_inittialze(&btn_low);
-    btn_press_state_t btn_high_status = btn_released;
-    btn_press_state_t btn_low_status  = btn_released;
+    dc_motor_initialize(&dcmotor1);
+    dc_motor_initialize(&dcmotor2);
+    
     while(1){
-        button_read_status(&btn_high, &btn_high_status);
-        button_read_status(&btn_low, &btn_low_status);
-        
-        if(btn_pressed == btn_high_status){
-            led_turn_on(&led1);
-        }
-        else{
-            led_turn_off(&led1);
-        }
-        
-        if(btn_pressed == btn_low_status){
-            led_turn_on(&led2);
-        }
-        else{
-            led_turn_off(&led2);
-        }
+        dc_motor_move_left(&dcmotor1);
+        dc_motor_move_left(&dcmotor2);
+        __delay_ms(2000);
+        dc_motor_move_right(&dcmotor1);
+        dc_motor_stop(&dcmotor2);
+        __delay_ms(2000);
+        dc_motor_move_right(&dcmotor2);
+        dc_motor_stop(&dcmotor1);
+        __delay_ms(2000);
     }
 }
 

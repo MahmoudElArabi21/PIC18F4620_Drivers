@@ -60,7 +60,7 @@ typedef struct{
 
 Std_ReturnType gpio_pin_direction_init(const pin_config_t *my_pin);
 Std_ReturnType gpio_pin_direction_stat(const pin_config_t *my_pin, direction_t *retdirection);
-Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin);
+Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin, uint8 logic);
 Std_ReturnType gpio_pin_logic_read(const pin_config_t *my_pin, logic_t *retlogic);
 Std_ReturnType gpio_pin_logic_toggle(const pin_config_t *my_pin);
 Std_ReturnType gpio_pin_initialize(const pin_config_t *my_pin);

@@ -4741,7 +4741,7 @@ typedef struct{
 
 Std_ReturnType gpio_pin_direction_init(const pin_config_t *my_pin);
 Std_ReturnType gpio_pin_direction_stat(const pin_config_t *my_pin, direction_t *retdirection);
-Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin);
+Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin, uint8 logic);
 Std_ReturnType gpio_pin_logic_read(const pin_config_t *my_pin, logic_t *retlogic);
 Std_ReturnType gpio_pin_logic_toggle(const pin_config_t *my_pin);
 Std_ReturnType gpio_pin_initialize(const pin_config_t *my_pin);
@@ -4792,15 +4792,52 @@ typedef struct {
 Std_ReturnType button_inittialze(button_t *my_btn);
 Std_ReturnType button_read_status(button_t *my_btn, btn_press_state_t *btn_state);
 # 12 "./app.h" 2
+
+# 1 "./ECU_L/RELAY/relay.h" 1
+# 17 "./ECU_L/RELAY/relay.h"
+typedef struct {
+    uint8 relay_port :3;
+    uint8 relay_pin :3;
+    uint8 relay_status :1;
+}relay_t;
+
+Std_ReturnType relay_initialize(const relay_t *my_relay);
+Std_ReturnType relay_turn_on(const relay_t *my_relay);
+Std_ReturnType relay_turn_off(const relay_t *my_relay);
+# 13 "./app.h" 2
+
+# 1 "./ECU_L/DC_MOTOR/dcmotor.h" 1
+# 17 "./ECU_L/DC_MOTOR/dcmotor.h"
+typedef struct {
+    pin_config_t dcmotorpins[2];
+}dcmotor_t;
+
+Std_ReturnType dc_motor_initialize(const dcmotor_t *my_dcmotor);
+Std_ReturnType dc_motor_move_right(const dcmotor_t *my_dcmotor);
+Std_ReturnType dc_motor_move_left(const dcmotor_t *my_dcmotor);
+Std_ReturnType dc_motor_stop(const dcmotor_t *my_dcmotor);
+# 14 "./app.h" 2
 # 10 "app.c" 2
 
 
-
-led_t led1 = {port_C, pin_0, gpio_low};
-led_t led2 = {port_C, pin_1, gpio_low};
-
+dcmotor_t dcmotor1 = { .dcmotorpins[0].port = port_D,
+                        .dcmotorpins[0].pin = pin_0,
+                        .dcmotorpins[0].direction= 0,
+                        .dcmotorpins[0].logic = 0,
+                        .dcmotorpins[1].port = port_D,
+                        .dcmotorpins[1].pin = pin_1,
+                        .dcmotorpins[1].direction= 0,
+                        .dcmotorpins[1].logic = 0};
+dcmotor_t dcmotor2 = { .dcmotorpins[0].port = port_D,
+                        .dcmotorpins[0].pin = pin_2,
+                        .dcmotorpins[0].direction= 0,
+                        .dcmotorpins[0].logic = 0,
+                        .dcmotorpins[1].port = port_D,
+                        .dcmotorpins[1].pin = pin_3,
+                        .dcmotorpins[1].direction= 0,
+                        .dcmotorpins[1].logic = 0};
 button_t btn_high = {
-    .button_pin.port = port_D,
+    .button_pin.port = port_B,
     .button_pin.pin = pin_0,
     .button_pin.direction = gpio_input,
     .button_pin.logic = gpio_low,
@@ -4809,36 +4846,28 @@ button_t btn_high = {
 };
 
 button_t btn_low = {
-    .button_pin.port = port_C,
-    .button_pin.pin = pin_2,
+    .button_pin.port = port_B,
+    .button_pin.pin = pin_1,
     .button_pin.direction = gpio_input,
     .button_pin.logic = gpio_high,
     .button_activate = btn_active_low,
     .button_state = btn_released
 };
+
+
 int main() {
-    led_init(&led1);
-    led_init(&led2);
-    button_inittialze(&btn_high);
-    button_inittialze(&btn_low);
-    btn_press_state_t btn_high_status = btn_released;
-    btn_press_state_t btn_low_status = btn_released;
+    dc_motor_initialize(&dcmotor1);
+    dc_motor_initialize(&dcmotor2);
+
     while(1){
-        button_read_status(&btn_high, &btn_high_status);
-        button_read_status(&btn_low, &btn_low_status);
-
-        if(btn_pressed == btn_high_status){
-            led_turn_on(&led1);
-        }
-        else{
-            led_turn_off(&led1);
-        }
-
-        if(btn_pressed == btn_low_status){
-            led_turn_on(&led2);
-        }
-        else{
-            led_turn_off(&led2);
-        }
+        dc_motor_move_left(&dcmotor1);
+        dc_motor_move_left(&dcmotor2);
+        _delay((unsigned long)((2000)*(4000000UL/4000.0)));
+        dc_motor_move_right(&dcmotor1);
+        dc_motor_stop(&dcmotor2);
+        _delay((unsigned long)((2000)*(4000000UL/4000.0)));
+        dc_motor_move_right(&dcmotor2);
+        dc_motor_stop(&dcmotor1);
+        _delay((unsigned long)((2000)*(4000000UL/4000.0)));
     }
 }

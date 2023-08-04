@@ -31,7 +31,7 @@ port_C 2
 port_D 3
 port_E 4
 ]
-"13 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+"12 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
 [e E2983 . `uc
 port_A 0
 port_B 1
@@ -49,16 +49,12 @@ pin_5 5
 pin_6 6
 pin_7 7
 ]
-[e E2965 . `uc
-gpio_low 0
-gpio_high 1
-]
-"16
-[e E3041 . `uc
+"28
+[e E3042 . `uc
 btn_pressed 0
 btn_released 1
 ]
-[e E3045 . `uc
+[e E3046 . `uc
 btn_active_high 0
 btn_active_low 1
 ]
@@ -66,12 +62,16 @@ btn_active_low 1
 gpio_output 0
 gpio_input 1
 ]
+[e E2965 . `uc
+gpio_low 0
+gpio_high 1
+]
 "4 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/BUTTON/button.c
-[e E3024 . `uc
+[e E3025 . `uc
 btn_pressed 0
 btn_released 1
 ]
-[e E3028 . `uc
+[e E3029 . `uc
 btn_active_high 0
 btn_active_low 1
 ]
@@ -80,7 +80,17 @@ btn_active_low 1
 gpio_low 0
 gpio_high 1
 ]
-"33 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+"21 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/RELAY/relay.c
+[e E2965 . `uc
+gpio_low 0
+gpio_high 1
+]
+"20 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/DC_MOTOR/dcmotor.c
+[e E2965 . `uc
+gpio_low 0
+gpio_high 1
+]
+"47 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
 [v _main main `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -106,16 +116,14 @@ gpio_high 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"4 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/BUTTON/button.c
-[v _button_inittialze button_inittialze `(uc  1 e 1 0 ]
+"3 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/DC_MOTOR/dcmotor.c
+[v _dc_motor_initialize dc_motor_initialize `(uc  1 e 1 0 ]
 "14
-[v _button_read_status button_read_status `(uc  1 e 1 0 ]
-"4 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LED/led.c
-[v _led_init led_init `(uc  1 e 1 0 ]
-"15
-[v _led_turn_on led_turn_on `(uc  1 e 1 0 ]
-"26
-[v _led_turn_off led_turn_off `(uc  1 e 1 0 ]
+[v _dc_motor_move_right dc_motor_move_right `(uc  1 e 1 0 ]
+"25
+[v _dc_motor_move_left dc_motor_move_left `(uc  1 e 1 0 ]
+"36
+[v _dc_motor_stop dc_motor_stop `(uc  1 e 1 0 ]
 "13 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
 [v _gpio_pin_direction_init gpio_pin_direction_init `(uc  1 e 1 0 ]
 "41
@@ -126,24 +134,16 @@ gpio_high 1
 [v _gpio_pin_logic_toggle gpio_pin_logic_toggle `(uc  1 e 1 0 ]
 "79
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
-[s S24 . 1 `uc 1 led_port 1 0 :3:0 
-`uc 1 led_pin 1 0 :3:3 
-`uc 1 led_status 1 0 :1:6 
-]
-"13 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
-[v _led1 led1 `S24  1 e 1 0 ]
-"14
-[v _led2 led2 `S24  1 e 1 0 ]
 [s S28 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"16
-[s S247 . 3 `S28 1 button_pin 1 0 `E3041 1 button_state 1 1 `E3045 1 button_activate 1 2 ]
-[v _btn_high btn_high `S247  1 e 3 0 ]
-"25
-[v _btn_low btn_low `S247  1 e 3 0 ]
+"12 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+[s S225 . 2 `[2]S28 1 dcmotorpins 2 0 ]
+[v _dcmotor1 dcmotor1 `S225  1 e 2 0 ]
+"20
+[v _dcmotor2 dcmotor2 `S225  1 e 2 0 ]
 "53 C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "190
@@ -180,134 +180,90 @@ gpio_high 1
 [v _port_regs port_regs `[5]*.39VEuc  1 e 10 0 ]
 "11
 [v _lat_regs lat_regs `[5]*.39VEuc  1 e 10 0 ]
-"33 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+"47 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
 [v _main main `(i  1 e 2 0 ]
 {
-"39
-[v main@btn_low_status btn_low_status `E3041  1 a 1 17 ]
-"38
-[v main@btn_high_status btn_high_status `E3041  1 a 1 16 ]
-"58
+"62
 } 0
-"15 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LED/led.c
-[v _led_turn_on led_turn_on `(uc  1 e 1 0 ]
+"36 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/DC_MOTOR/dcmotor.c
+[v _dc_motor_stop dc_motor_stop `(uc  1 e 1 0 ]
 {
+"37
+[v dc_motor_stop@ret ret `uc  1 a 1 12 ]
 [s S28 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"17
-[v led_turn_on@my_pin my_pin `S28  1 a 1 12 ]
-[s S24 . 1 `uc 1 led_port 1 0 :3:0 
-`uc 1 led_pin 1 0 :3:3 
-`uc 1 led_status 1 0 :1:6 
-]
-"15
-[v led_turn_on@my_led my_led `*.39CS24  1 p 2 9 ]
-"16
-[v led_turn_on@F3049 F3049 `S28  1 s 1 F3049 ]
-"25
-} 0
-"26
-[v _led_turn_off led_turn_off `(uc  1 e 1 0 ]
-{
-[s S28 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"28
-[v led_turn_off@my_pin my_pin `S28  1 a 1 12 ]
-[s S24 . 1 `uc 1 led_port 1 0 :3:0 
-`uc 1 led_pin 1 0 :3:3 
-`uc 1 led_status 1 0 :1:6 
-]
-"26
-[v led_turn_off@my_led my_led `*.39CS24  1 p 2 9 ]
-"27
-[v led_turn_off@F3054 F3054 `S28  1 s 1 F3054 ]
 "36
+[s S225 . 2 `[2]S28 1 dcmotorpins 2 0 ]
+[v dc_motor_stop@my_dcmotor my_dcmotor `*.39CS225  1 p 2 10 ]
+"46
 } 0
-"4
-[v _led_init led_init `(uc  1 e 1 0 ]
-{
-[s S28 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"6
-[v led_init@my_pin my_pin `S28  1 a 1 15 ]
-[s S24 . 1 `uc 1 led_port 1 0 :3:0 
-`uc 1 led_pin 1 0 :3:3 
-`uc 1 led_status 1 0 :1:6 
-]
-"4
-[v led_init@my_led my_led `*.39CS24  1 p 2 12 ]
-"5
-[v led_init@F3044 F3044 `S28  1 s 1 F3044 ]
 "14
-} 0
-"14 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/BUTTON/button.c
-[v _button_read_status button_read_status `(uc  1 e 1 0 ]
+[v _dc_motor_move_right dc_motor_move_right `(uc  1 e 1 0 ]
 {
-"16
-[v button_read_status@Pin_Logic_Status Pin_Logic_Status `E2965  1 a 1 14 ]
+"15
+[v dc_motor_move_right@ret ret `uc  1 a 1 12 ]
 [s S28 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "14
-[s S247 . 3 `S28 1 button_pin 1 0 `E3041 1 button_state 1 1 `E3045 1 button_activate 1 2 ]
-[v button_read_status@my_btn my_btn `*.39S247  1 p 2 9 ]
-[v button_read_status@btn_state btn_state `*.39E3024  1 p 2 11 ]
-"40
+[s S225 . 2 `[2]S28 1 dcmotorpins 2 0 ]
+[v dc_motor_move_right@my_dcmotor my_dcmotor `*.39CS225  1 p 2 10 ]
+"24
 } 0
-"59 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
-[v _gpio_pin_logic_read gpio_pin_logic_read `(uc  1 e 1 0 ]
+"25
+[v _dc_motor_move_left dc_motor_move_left `(uc  1 e 1 0 ]
 {
+"26
+[v dc_motor_move_left@ret ret `uc  1 a 1 12 ]
 [s S28 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-[v gpio_pin_logic_read@my_pin my_pin `*.39CS28  1 p 2 0 ]
-[v gpio_pin_logic_read@retlogic retlogic `*.39E2965  1 p 2 2 ]
-"68
+"25
+[s S225 . 2 `[2]S28 1 dcmotorpins 2 0 ]
+[v dc_motor_move_left@my_dcmotor my_dcmotor `*.39CS225  1 p 2 10 ]
+"35
 } 0
-"4 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/BUTTON/button.c
-[v _button_inittialze button_inittialze `(uc  1 e 1 0 ]
+"3
+[v _dc_motor_initialize dc_motor_initialize `(uc  1 e 1 0 ]
 {
+"4
+[v dc_motor_initialize@ret ret `uc  1 a 1 15 ]
 [s S28 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-[s S247 . 3 `S28 1 button_pin 1 0 `E3041 1 button_state 1 1 `E3045 1 button_activate 1 2 ]
-[v button_inittialze@my_btn my_btn `*.39S247  1 p 2 12 ]
+"3
+[s S225 . 2 `[2]S28 1 dcmotorpins 2 0 ]
+[v dc_motor_initialize@my_dcmotor my_dcmotor `*.39CS225  1 p 2 13 ]
 "13
 } 0
 "79 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
 {
 "80
-[v gpio_pin_initialize@ret ret `uc  1 a 1 11 ]
+[v gpio_pin_initialize@ret ret `uc  1 a 1 12 ]
 [s S28 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "79
-[v gpio_pin_initialize@my_pin my_pin `*.39CS28  1 p 2 9 ]
+[v gpio_pin_initialize@my_pin my_pin `*.39CS28  1 p 2 10 ]
 "89
 } 0
 "41
 [v _gpio_pin_logic_write gpio_pin_logic_write `(uc  1 e 1 0 ]
 {
 "42
-[v gpio_pin_logic_write@ret ret `uc  1 a 1 8 ]
+[v gpio_pin_logic_write@ret ret `uc  1 a 1 9 ]
 [s S28 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
@@ -315,6 +271,7 @@ gpio_high 1
 ]
 "41
 [v gpio_pin_logic_write@my_pin my_pin `*.39CS28  1 p 2 0 ]
+[v gpio_pin_logic_write@logic logic `uc  1 p 1 2 ]
 "58
 } 0
 "13

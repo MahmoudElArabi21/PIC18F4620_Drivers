@@ -19,8 +19,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [c E2965 0 1 .. ]
 [n E2965 . gpio_low gpio_high  ]
 "63 ECU_L/LED/../../MCAL/GPIO/gpio.h
-[; ;ECU_L/LED/../../MCAL/GPIO/gpio.h: 63: Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin);
-[v _gpio_pin_logic_write `(uc ~T0 @X0 0 ef1`*CS273 ]
+[; ;ECU_L/LED/../../MCAL/GPIO/gpio.h: 63: Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin, uint8 logic);
+[v _gpio_pin_logic_write `(uc ~T0 @X0 0 ef2`*CS273`uc ]
 "65
 [; ;ECU_L/LED/../../MCAL/GPIO/gpio.h: 65: Std_ReturnType gpio_pin_logic_toggle(const pin_config_t *my_pin);
 [v _gpio_pin_logic_toggle `(uc ~T0 @X0 0 ef1`*CS273 ]
@@ -446,8 +446,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECU_L/LED/led.c: 5:     Std_ReturnType ret = (Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-[v F3044 `S273 ~T0 @X0 1 s ]
-[i F3044
+[v F3045 `S273 ~T0 @X0 1 s ]
+[i F3045
 :U ..
 :U ..
 "6
@@ -460,7 +460,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _my_pin `S273 ~T0 @X0 1 a ]
-[e = _my_pin F3044 ]
+[e = _my_pin F3045 ]
 [e ; = . _my_pin 0 . *U _my_led 0 ; = . _my_pin 1 . *U _my_led 1 ; = . _my_pin 2 -> . `E2969 0 `uc = . _my_pin 3 . *U _my_led 2 ]
 "7
 [; ;ECU_L/LED/led.c: 7:     if(my_led == ((void*)0)){
@@ -503,8 +503,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECU_L/LED/led.c: 16:     Std_ReturnType ret = (Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-[v F3049 `S273 ~T0 @X0 1 s ]
-[i F3049
+[v F3050 `S273 ~T0 @X0 1 s ]
+[i F3050
 :U ..
 :U ..
 "17
@@ -517,7 +517,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _my_pin `S273 ~T0 @X0 1 a ]
-[e = _my_pin F3049 ]
+[e = _my_pin F3050 ]
 [e ; = . _my_pin 0 . *U _my_led 0 ; = . _my_pin 1 . *U _my_led 1 ; = . _my_pin 2 -> . `E2969 0 `uc = . _my_pin 3 -> . `E2965 1 `uc ]
 "18
 [; ;ECU_L/LED/led.c: 18:     if(my_led == ((void*)0)){
@@ -535,8 +535,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 279 ]
 {
 "22
-[; ;ECU_L/LED/led.c: 22:         ret = gpio_pin_logic_write(&my_pin);
-[e = _ret ( _gpio_pin_logic_write (1 -> &U _my_pin `*CS273 ]
+[; ;ECU_L/LED/led.c: 22:         ret = gpio_pin_logic_write(&my_pin, gpio_high);
+[e = _ret ( _gpio_pin_logic_write (2 , -> &U _my_pin `*CS273 -> . `E2965 1 `uc ]
 "23
 [; ;ECU_L/LED/led.c: 23:     }
 }
@@ -560,8 +560,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECU_L/LED/led.c: 27:     Std_ReturnType ret = (Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-[v F3054 `S273 ~T0 @X0 1 s ]
-[i F3054
+[v F3055 `S273 ~T0 @X0 1 s ]
+[i F3055
 :U ..
 :U ..
 "28
@@ -574,7 +574,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _my_pin `S273 ~T0 @X0 1 a ]
-[e = _my_pin F3054 ]
+[e = _my_pin F3055 ]
 [e ; = . _my_pin 0 . *U _my_led 0 ; = . _my_pin 1 . *U _my_led 1 ; = . _my_pin 2 -> . `E2969 0 `uc = . _my_pin 3 -> . `E2965 0 `uc ]
 "29
 [; ;ECU_L/LED/led.c: 29:     if(my_led == ((void*)0)){
@@ -592,8 +592,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 282 ]
 {
 "33
-[; ;ECU_L/LED/led.c: 33:         ret = gpio_pin_logic_write(&my_pin);
-[e = _ret ( _gpio_pin_logic_write (1 -> &U _my_pin `*CS273 ]
+[; ;ECU_L/LED/led.c: 33:         ret = gpio_pin_logic_write(&my_pin, gpio_low);
+[e = _ret ( _gpio_pin_logic_write (2 , -> &U _my_pin `*CS273 -> . `E2965 0 `uc ]
 "34
 [; ;ECU_L/LED/led.c: 34:     }
 }
@@ -617,8 +617,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ECU_L/LED/led.c: 38:     Std_ReturnType ret = (Std_ReturnType)0x01;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 1 `i `uc ]
-[v F3059 `S273 ~T0 @X0 1 s ]
-[i F3059
+[v F3060 `S273 ~T0 @X0 1 s ]
+[i F3060
 :U ..
 :U ..
 "39
@@ -631,7 +631,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _my_pin `S273 ~T0 @X0 1 a ]
-[e = _my_pin F3059 ]
+[e = _my_pin F3060 ]
 [e ; = . _my_pin 0 . *U _my_led 0 ; = . _my_pin 1 . *U _my_led 1 ; = . _my_pin 2 -> . `E2969 0 `uc = . _my_pin 3 . *U _my_led 2 ]
 "40
 [; ;ECU_L/LED/led.c: 40:     if(my_led == ((void*)0)){

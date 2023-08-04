@@ -38,13 +38,13 @@ Std_ReturnType gpio_pin_direction_stat(const pin_config_t *my_pin, direction_t *
     }
 }
 
-Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin){
+Std_ReturnType gpio_pin_logic_write(const pin_config_t *my_pin, uint8 logic){
     Std_ReturnType ret = E_OK;
     if ((NULL == my_pin) || (my_pin->pin) > 7){
         ret = E_NOT_OK;
     }
     else{
-        switch(my_pin->logic){
+        switch(logic){
             case gpio_low:
                 bit_clear(*lat_regs[my_pin->port], my_pin->pin);
                 break;
@@ -83,7 +83,7 @@ Std_ReturnType gpio_pin_initialize(const pin_config_t *my_pin){
     }
     else{
         ret = gpio_pin_direction_init(my_pin);
-        ret = gpio_pin_logic_write(my_pin);
+        ret = gpio_pin_logic_write(my_pin, my_pin->logic);
     }
     return ret;
 }
