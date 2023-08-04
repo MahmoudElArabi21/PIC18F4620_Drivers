@@ -5,6 +5,9 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="ECU_L" displayName="ECU_L" projectFiles="true">
+        <logicalFolder name="7_segments" displayName="7_segments" projectFiles="true">
+          <itemPath>ECU_L/7_segments/segments_7.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="BUTTON" displayName="BUTTON" projectFiles="true">
           <itemPath>ECU_L/BUTTON/button.h</itemPath>
         </logicalFolder>
@@ -35,6 +38,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="ECU_L" displayName="ECU_L" projectFiles="true">
+        <logicalFolder name="7_segments" displayName="7_segments" projectFiles="true">
+          <itemPath>ECU_L/7_segments/segments_7.c</itemPath>
+        </logicalFolder>
         <logicalFolder name="BUTTON" displayName="BUTTON" projectFiles="true">
           <itemPath>ECU_L/BUTTON/button.c</itemPath>
         </logicalFolder>

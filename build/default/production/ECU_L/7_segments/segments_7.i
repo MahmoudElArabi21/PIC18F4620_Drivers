@@ -1,4 +1,4 @@
-# 1 "app.c"
+# 1 "ECU_L/7_segments/segments_7.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,14 +6,16 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "app.c" 2
+# 1 "ECU_L/7_segments/segments_7.c" 2
+# 1 "ECU_L/7_segments/segments_7.h" 1
+# 11 "ECU_L/7_segments/segments_7.h"
+# 1 "ECU_L/7_segments/../../MCAL/GPIO/gpio.h" 1
+# 10 "ECU_L/7_segments/../../MCAL/GPIO/gpio.h"
+# 1 "ECU_L/7_segments/../../MCAL/GPIO/gpio_cfg.h" 1
+# 10 "ECU_L/7_segments/../../MCAL/GPIO/gpio.h" 2
 
-
-
-
-
-
-
+# 1 "ECU_L/7_segments/../../MCAL/GPIO/../mcal_types.h" 1
+# 13 "ECU_L/7_segments/../../MCAL/GPIO/../mcal_types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -177,7 +179,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "app.c" 2
+# 13 "ECU_L/7_segments/../../MCAL/GPIO/../mcal_types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 3
@@ -242,19 +244,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 9 "app.c" 2
+# 14 "ECU_L/7_segments/../../MCAL/GPIO/../mcal_types.h" 2
 
-# 1 "./app.h" 1
-# 11 "./app.h"
-# 1 "./ECU_L/LED/led.h" 1
-# 10 "./ECU_L/LED/led.h"
-# 1 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 1
-# 10 "./ECU_L/LED/../../MCAL/GPIO/gpio.h"
-# 1 "./ECU_L/LED/../../MCAL/GPIO/gpio_cfg.h" 1
-# 10 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
-
-# 1 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 1
-# 15 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -310,7 +301,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 15 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
+# 15 "ECU_L/7_segments/../../MCAL/GPIO/../mcal_types.h" 2
 
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 3
@@ -4687,7 +4678,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
-# 16 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
+# 16 "ECU_L/7_segments/../../MCAL/GPIO/../mcal_types.h" 2
 
 
 
@@ -4699,8 +4690,8 @@ typedef signed short sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
-# 23 "./ECU_L/LED/../../MCAL/GPIO/gpio.h"
+# 11 "ECU_L/7_segments/../../MCAL/GPIO/gpio.h" 2
+# 23 "ECU_L/7_segments/../../MCAL/GPIO/gpio.h"
 typedef enum {
             gpio_low,
             gpio_high
@@ -4751,75 +4742,10 @@ Std_ReturnType gpio_port_direction_stat(port_index_t my_port , uint8 *retdirecti
 Std_ReturnType gpio_port_logic_write(port_index_t my_port, uint8 my_logic);
 Std_ReturnType gpio_port_logic_read(port_index_t my_port , uint8 *retlogic);
 Std_ReturnType gpio_port_logic_toggle(port_index_t my_port);
-# 10 "./ECU_L/LED/led.h" 2
+# 11 "ECU_L/7_segments/segments_7.h" 2
 
 
-typedef enum{
-    led_off,
-    led_on,
-}led_status_t;
 
-typedef struct{
-    uint8 led_port :3;
-    uint8 led_pin :3;
-    uint8 led_status :1;
-}led_t;
-
-Std_ReturnType led_init(const led_t* my_led);
-Std_ReturnType led_turn_on(const led_t* my_led);
-Std_ReturnType led_turn_off(const led_t* my_led);
-Std_ReturnType led_toggle(const led_t* my_led);
-# 11 "./app.h" 2
-
-# 1 "./ECU_L/BUTTON/button.h" 1
-# 13 "./ECU_L/BUTTON/button.h"
-typedef enum{
-    btn_pressed,
-    btn_released,
-}btn_press_state_t;
-
-typedef enum{
-    btn_active_high,
-    btn_active_low,
-}btn_active_state_t;
-
-typedef struct {
-    pin_config_t button_pin;
-    btn_press_state_t button_state;
-    btn_active_state_t button_activate;
-}button_t;
-
-Std_ReturnType button_inittialze(button_t *my_btn);
-Std_ReturnType button_read_status(button_t *my_btn, btn_press_state_t *btn_state);
-# 12 "./app.h" 2
-
-# 1 "./ECU_L/RELAY/relay.h" 1
-# 17 "./ECU_L/RELAY/relay.h"
-typedef struct {
-    uint8 relay_port :3;
-    uint8 relay_pin :3;
-    uint8 relay_status :1;
-}relay_t;
-
-Std_ReturnType relay_initialize(const relay_t *my_relay);
-Std_ReturnType relay_turn_on(const relay_t *my_relay);
-Std_ReturnType relay_turn_off(const relay_t *my_relay);
-# 13 "./app.h" 2
-
-# 1 "./ECU_L/DC_MOTOR/dcmotor.h" 1
-# 17 "./ECU_L/DC_MOTOR/dcmotor.h"
-typedef struct {
-    pin_config_t dcmotorpins[2];
-}dcmotor_t;
-
-Std_ReturnType dc_motor_initialize(const dcmotor_t *my_dcmotor);
-Std_ReturnType dc_motor_move_right(const dcmotor_t *my_dcmotor);
-Std_ReturnType dc_motor_move_left(const dcmotor_t *my_dcmotor);
-Std_ReturnType dc_motor_stop(const dcmotor_t *my_dcmotor);
-# 14 "./app.h" 2
-
-# 1 "./ECU_L/7_segments/segments_7.h" 1
-# 14 "./ECU_L/7_segments/segments_7.h"
 typedef enum{
     seg_com_anode,
     seg_com_cathode
@@ -4832,48 +4758,32 @@ typedef struct{
 
 Std_ReturnType segment_initialze(const segmest_t *my_segment);
 Std_ReturnType segment_write_number(const segmest_t *my_segment, int number);
-# 15 "./app.h" 2
-# 10 "app.c" 2
+# 1 "ECU_L/7_segments/segments_7.c" 2
 
 
-
-segmest_t segment_anode = { .segment_pins[0].port = port_C,
-                            .segment_pins[0].pin = 0,
-                            .segment_pins[0].direction =0,
-                            .segment_pins[0].logic=0,
-                            .segment_pins[1].port = port_C,
-                            .segment_pins[1].pin = 1,
-                            .segment_pins[1].direction =0,
-                            .segment_pins[1].logic=0,
-                            .segment_pins[2].port = port_C,
-                            .segment_pins[2].pin = 2,
-                            .segment_pins[2].direction =0,
-                            .segment_pins[2].logic=0 ,
-                            .segment_type = seg_com_anode };
-
-segmest_t segment_cathode = { .segment_pins[0].port = port_D,
-                            .segment_pins[0].pin = 0,
-                            .segment_pins[0].direction =0,
-                            .segment_pins[0].logic=0,
-                            .segment_pins[1].port = port_D,
-                            .segment_pins[1].pin = 1,
-                            .segment_pins[1].direction =0,
-                            .segment_pins[1].logic=0,
-                            .segment_pins[2].port = port_D,
-                            .segment_pins[2].pin = 2,
-                            .segment_pins[2].direction =0,
-                            .segment_pins[2].logic=0 ,
-                            .segment_type = seg_com_cathode };
-
-
-int main() {
-    segment_initialze(&segment_anode);
-    segment_initialze(&segment_cathode);
-    while(1){
-        for( int j = 0; j<10; j++){
-            segment_write_number(&segment_anode, j);
-            segment_write_number(&segment_cathode, j);
-            _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-        }
+Std_ReturnType segment_initialze(const segmest_t *my_segment){
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    if(((void*)0) == my_segment){
+        ret = (Std_ReturnType)0x00;
     }
+    else{
+        ret = gpio_pin_initialize(&(my_segment->segment_pins[0]));
+        ret = gpio_pin_initialize(&(my_segment->segment_pins[1]));
+        ret = gpio_pin_initialize(&(my_segment->segment_pins[2]));
+        ret = gpio_pin_initialize(&(my_segment->segment_pins[3]));
+    }
+    return ret;
+}
+Std_ReturnType segment_write_number(const segmest_t *my_segment, int number){
+    Std_ReturnType ret = (Std_ReturnType)0x01;
+    if((((void*)0) == my_segment) && (number > 9)){
+        ret = (Std_ReturnType)0x00;
+    }
+    else{
+        ret = gpio_pin_logic_write(&(my_segment->segment_pins[0]), (number& 1));
+        ret = gpio_pin_logic_write(&(my_segment->segment_pins[1]), (number>>1 & 0x01));
+        ret = gpio_pin_logic_write(&(my_segment->segment_pins[2]), (number>>2 & 0x01));
+        ret = gpio_pin_logic_write(&(my_segment->segment_pins[3]), (number>>3 & 0x01));
+    }
+    return ret;
 }

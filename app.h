@@ -12,6 +12,7 @@
 #include "ECU_L/BUTTON/button.h"
 #include "ECU_L/RELAY/relay.h"
 #include "ECU_L/DC_MOTOR/dcmotor.h"
+#include "ECU_L/7_segments/segments_7.h"
 
 #endif	/* APP_H */
 
