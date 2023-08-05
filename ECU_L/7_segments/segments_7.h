@@ -10,18 +10,23 @@
 
 #include "../../MCAL/GPIO/gpio.h"
 
+#define SEGEMENT_PIN0 0
+#define SEGEMENT_PIN1 1
+#define SEGEMENT_PIN2 2
+#define SEGEMENT_PIN3 3
 
 typedef enum{
-    seg_com_anode,
-    seg_com_cathode
+    SEGMENT_COMMON_ANODE,
+    SEGMENT_COMMON_CATHODE
 }segment_type_t;
 
 typedef struct{
     pin_config_t segment_pins[4];
-    segment_type_t segment_type ;
-}segmest_t;
+    segment_type_t segment_type;
+}segment_t;
 
-Std_ReturnType segment_initialze(const segmest_t *my_segment);
-Std_ReturnType segment_write_number(const segmest_t *my_segment, int number);
+Std_ReturnType seven_segement_intialize(const segment_t *seg);
+Std_ReturnType seven_segement_write_number(const segment_t *seg, uint8 number);
+
 #endif	/* SEGMENTS_7_H */
 

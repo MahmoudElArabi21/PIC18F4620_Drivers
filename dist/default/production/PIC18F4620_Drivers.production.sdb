@@ -3,12 +3,41 @@
 [d edition pro ]
 [d chip 18F4620 ]
 [d frameptr 4065 ]
+"3 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/7_segments/segments_7.c
+[e E3025 . `uc
+SEGMENT_COMMON_ANODE 0
+SEGMENT_COMMON_CATHODE 1
+]
+"4 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/BUTTON/button.c
+[e E3025 . `uc
+btn_pressed 0
+btn_released 1
+]
+[e E3029 . `uc
+btn_active_high 0
+btn_active_low 1
+]
+"16
+[e E2965 . `uc
+gpio_low 0
+gpio_high 1
+]
+"20 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/DC_MOTOR/dcmotor.c
+[e E2965 . `uc
+gpio_low 0
+gpio_high 1
+]
 "6 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LED/led.c
 [e E2969 . `uc
 gpio_output 0
 gpio_input 1
 ]
 "17
+[e E2965 . `uc
+gpio_low 0
+gpio_high 1
+]
+"21 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/RELAY/relay.c
 [e E2965 . `uc
 gpio_low 0
 gpio_high 1
@@ -31,11 +60,7 @@ port_C 2
 port_D 3
 port_E 4
 ]
-"13 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
-[e E3082 . `uc
-seg_com_anode 0
-seg_com_cathode 1
-]
+"12 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
 [e E2983 . `uc
 port_A 0
 port_B 1
@@ -43,36 +68,30 @@ port_C 2
 port_D 3
 port_E 4
 ]
-"4 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/BUTTON/button.c
-[e E3025 . `uc
-btn_pressed 0
-btn_released 1
+[e E2973 . `uc
+pin_0 0
+pin_1 1
+pin_2 2
+pin_3 3
+pin_4 4
+pin_5 5
+pin_6 6
+pin_7 7
 ]
-[e E3029 . `uc
-btn_active_high 0
-btn_active_low 1
+[e E2969 . `uc
+gpio_output 0
+gpio_input 1
 ]
-"16
 [e E2965 . `uc
 gpio_low 0
 gpio_high 1
 ]
-"21 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/RELAY/relay.c
+"49 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LCD/lcd.c
 [e E2965 . `uc
 gpio_low 0
 gpio_high 1
 ]
-"20 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/DC_MOTOR/dcmotor.c
-[e E2965 . `uc
-gpio_low 0
-gpio_high 1
-]
-"3 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/7_segments/segments_7.c
-[e E3025 . `uc
-seg_com_anode 0
-seg_com_cathode 1
-]
-"42 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+"89 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
 [v _main main `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -86,6 +105,10 @@ seg_com_cathode 1
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\memset.c
+[v _memset memset `(*.2v  1 e 2 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -98,10 +121,36 @@ seg_com_cathode 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"3 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/7_segments/segments_7.c
-[v _segment_initialze segment_initialze `(uc  1 e 1 0 ]
-"16
-[v _segment_write_number segment_write_number `(uc  1 e 1 0 ]
+"12 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LCD/lcd.c
+[v _lcd_4bit_intialize lcd_4bit_intialize `(uc  1 e 1 0 ]
+"41
+[v _lcd_4bit_send_command lcd_4bit_send_command `(uc  1 e 1 0 ]
+"62
+[v _lcd_4bit_send_char_data lcd_4bit_send_char_data `(uc  1 e 1 0 ]
+"83
+[v _lcd_4bit_send_char_data_pos lcd_4bit_send_char_data_pos `(uc  1 e 1 0 ]
+"139
+[v _lcd_8bit_intialize lcd_8bit_intialize `(uc  1 e 1 0 ]
+"168
+[v _lcd_8bit_send_command lcd_8bit_send_command `(uc  1 e 1 0 ]
+"188
+[v _lcd_8bit_send_char_data lcd_8bit_send_char_data `(uc  1 e 1 0 ]
+"208
+[v _lcd_8bit_send_char_data_pos lcd_8bit_send_char_data_pos `(uc  1 e 1 0 ]
+"220
+[v _lcd_8bit_send_string lcd_8bit_send_string `(uc  1 e 1 0 ]
+"245
+[v _lcd_8bit_send_custom_char lcd_8bit_send_custom_char `(uc  1 e 1 0 ]
+"306
+[v _lcd_send_4bits lcd_send_4bits `(uc  1 s 1 lcd_send_4bits ]
+"315
+[v _lcd_4bit_send_enable_signal lcd_4bit_send_enable_signal `(uc  1 s 1 lcd_4bit_send_enable_signal ]
+"324
+[v _lcd_8bit_send_enable_signal lcd_8bit_send_enable_signal `(uc  1 s 1 lcd_8bit_send_enable_signal ]
+"333
+[v _lcd_8bit_set_cursor lcd_8bit_set_cursor `(uc  1 s 1 lcd_8bit_set_cursor ]
+"346
+[v _lcd_4bit_set_cursor lcd_4bit_set_cursor `(uc  1 s 1 lcd_4bit_set_cursor ]
 "13 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
 [v _gpio_pin_direction_init gpio_pin_direction_init `(uc  1 e 1 0 ]
 "41
@@ -112,16 +161,19 @@ seg_com_cathode 1
 [v _gpio_pin_logic_toggle gpio_pin_logic_toggle `(uc  1 e 1 0 ]
 "79
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"13 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
-[s S228 . 5 `[4]S28 1 segment_pins 4 0 `E3082 1 segment_type 1 4 ]
-[v _segment_anode segment_anode `S228  1 e 5 0 ]
-"27
-[v _segment_cathode segment_cathode `S228  1 e 5 0 ]
+"12 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
+[v _LCD1 LCD1 `S386  1 e 6 0 ]
+"37
+[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
+[v _LCD2 LCD2 `S411  1 e 10 0 ]
+"78
+[v _customchar customchar `C[8]uc  1 e 8 0 ]
 "53 C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "190
@@ -158,70 +210,210 @@ seg_com_cathode 1
 [v _port_regs port_regs `[5]*.39VEuc  1 e 10 0 ]
 "11
 [v _lat_regs lat_regs `[5]*.39VEuc  1 e 10 0 ]
-"42 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+"89 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
 [v _main main `(i  1 e 2 0 ]
 {
-"46
-[v main@j j `i  1 a 2 19 ]
-"52
+"96
 } 0
-"16 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/7_segments/segments_7.c
-[v _segment_write_number segment_write_number `(uc  1 e 1 0 ]
+"245 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LCD/lcd.c
+[v _lcd_8bit_send_custom_char lcd_8bit_send_custom_char `(uc  1 e 1 0 ]
 {
-"17
-[v segment_write_number@ret ret `uc  1 a 1 16 ]
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+"248
+[v lcd_8bit_send_custom_char@lcd_counter lcd_counter `uc  1 a 1 44 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"16
-[s S228 . 5 `[4]S28 1 segment_pins 4 0 `E3082 1 segment_type 1 4 ]
-[v segment_write_number@my_segment my_segment `*.39CS228  1 p 2 10 ]
-[v segment_write_number@number number `i  1 p 2 12 ]
-"28
+"245
+[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
+[v lcd_8bit_send_custom_char@lcd lcd `*.39CS411  1 p 2 35 ]
+[v lcd_8bit_send_custom_char@row row `uc  1 p 1 37 ]
+[v lcd_8bit_send_custom_char@column column `uc  1 p 1 38 ]
+"246
+[v lcd_8bit_send_custom_char@_chr _chr `*.25Cuc  1 p 2 39 ]
+[v lcd_8bit_send_custom_char@mem_pos mem_pos `uc  1 p 1 41 ]
+"260
 } 0
-"3
-[v _segment_initialze segment_initialze `(uc  1 e 1 0 ]
+"208
+[v _lcd_8bit_send_char_data_pos lcd_8bit_send_char_data_pos `(uc  1 e 1 0 ]
 {
-"4
-[v segment_initialze@ret ret `uc  1 a 1 15 ]
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+"209
+[v lcd_8bit_send_char_data_pos@ret ret `uc  1 a 1 34 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"3
-[s S228 . 5 `[4]S28 1 segment_pins 4 0 `E3082 1 segment_type 1 4 ]
-[v segment_initialze@my_segment my_segment `*.39CS228  1 p 2 13 ]
-"15
+"208
+[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
+[v lcd_8bit_send_char_data_pos@lcd lcd `*.39CS411  1 p 2 29 ]
+[v lcd_8bit_send_char_data_pos@row row `uc  1 p 1 31 ]
+[v lcd_8bit_send_char_data_pos@column column `uc  1 p 1 32 ]
+[v lcd_8bit_send_char_data_pos@data data `uc  1 p 1 33 ]
+"218
 } 0
-"79 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
-[v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
+"333
+[v _lcd_8bit_set_cursor lcd_8bit_set_cursor `(uc  1 s 1 lcd_8bit_set_cursor ]
 {
-"80
-[v gpio_pin_initialize@ret ret `uc  1 a 1 12 ]
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+"334
+[v lcd_8bit_set_cursor@ret ret `uc  1 a 1 28 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"79
-[v gpio_pin_initialize@my_pin my_pin `*.39CS28  1 p 2 10 ]
-"89
+"333
+[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
+[v lcd_8bit_set_cursor@lcd lcd `*.39CS411  1 p 2 22 ]
+[v lcd_8bit_set_cursor@row row `uc  1 p 1 24 ]
+[v lcd_8bit_set_cursor@coulmn coulmn `uc  1 p 1 25 ]
+"344
+} 0
+"188
+[v _lcd_8bit_send_char_data lcd_8bit_send_char_data `(uc  1 e 1 0 ]
+{
+"190
+[v lcd_8bit_send_char_data@l_pin_counter l_pin_counter `uc  1 a 1 21 ]
+"189
+[v lcd_8bit_send_char_data@ret ret `uc  1 a 1 20 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"188
+[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
+[v lcd_8bit_send_char_data@lcd lcd `*.39CS411  1 p 2 13 ]
+[v lcd_8bit_send_char_data@data data `uc  1 p 1 15 ]
+"206
+} 0
+"139
+[v _lcd_8bit_intialize lcd_8bit_intialize `(uc  1 e 1 0 ]
+{
+"141
+[v lcd_8bit_intialize@l_data_pins_counter l_data_pins_counter `uc  1 a 1 27 ]
+"140
+[v lcd_8bit_intialize@ret ret `uc  1 a 1 26 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"139
+[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
+[v lcd_8bit_intialize@lcd lcd `*.39CS411  1 p 2 22 ]
+"166
+} 0
+"168
+[v _lcd_8bit_send_command lcd_8bit_send_command `(uc  1 e 1 0 ]
+{
+"170
+[v lcd_8bit_send_command@l_pin_counter l_pin_counter `uc  1 a 1 21 ]
+"169
+[v lcd_8bit_send_command@ret ret `uc  1 a 1 20 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"168
+[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
+[v lcd_8bit_send_command@lcd lcd `*.39CS411  1 p 2 13 ]
+[v lcd_8bit_send_command@command command `uc  1 p 1 15 ]
+"186
+} 0
+"324
+[v _lcd_8bit_send_enable_signal lcd_8bit_send_enable_signal `(uc  1 s 1 lcd_8bit_send_enable_signal ]
+{
+"325
+[v lcd_8bit_send_enable_signal@ret ret `uc  1 a 1 12 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"324
+[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
+[v lcd_8bit_send_enable_signal@lcd lcd `*.39CS411  1 p 2 10 ]
+"330
+} 0
+"12
+[v _lcd_4bit_intialize lcd_4bit_intialize `(uc  1 e 1 0 ]
+{
+"14
+[v lcd_4bit_intialize@l_data_pins_counter l_data_pins_counter `uc  1 a 1 23 ]
+"13
+[v lcd_4bit_intialize@ret ret `uc  1 a 1 22 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"12
+[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
+[v lcd_4bit_intialize@lcd lcd `*.39CS386  1 p 2 18 ]
+"39
 } 0
 "41
+[v _lcd_4bit_send_command lcd_4bit_send_command `(uc  1 e 1 0 ]
+{
+"42
+[v lcd_4bit_send_command@ret ret `uc  1 a 1 17 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"41
+[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
+[v lcd_4bit_send_command@lcd lcd `*.39CS386  1 p 2 14 ]
+[v lcd_4bit_send_command@command command `uc  1 p 1 16 ]
+"60
+} 0
+"306
+[v _lcd_send_4bits lcd_send_4bits `(uc  1 s 1 lcd_send_4bits ]
+{
+"307
+[v lcd_send_4bits@ret ret `uc  1 a 1 13 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"306
+[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
+[v lcd_send_4bits@lcd lcd `*.39CS386  1 p 2 10 ]
+[v lcd_send_4bits@_data_command _data_command `uc  1 p 1 12 ]
+"313
+} 0
+"315
+[v _lcd_4bit_send_enable_signal lcd_4bit_send_enable_signal `(uc  1 s 1 lcd_4bit_send_enable_signal ]
+{
+"316
+[v lcd_4bit_send_enable_signal@ret ret `uc  1 a 1 12 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
+"315
+[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
+[v lcd_4bit_send_enable_signal@lcd lcd `*.39CS386  1 p 2 10 ]
+"321
+} 0
+"41 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
 [v _gpio_pin_logic_write gpio_pin_logic_write `(uc  1 e 1 0 ]
 {
 "42
 [v gpio_pin_logic_write@ret ret `uc  1 a 1 9 ]
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "41
-[v gpio_pin_logic_write@my_pin my_pin `*.39CS28  1 p 2 0 ]
+[v gpio_pin_logic_write@my_pin my_pin `*.39CS24  1 p 2 0 ]
 [v gpio_pin_logic_write@logic logic `uc  1 p 1 2 ]
 "58
 } 0
@@ -230,12 +422,12 @@ seg_com_cathode 1
 {
 "14
 [v gpio_pin_direction_init@ret ret `uc  1 a 1 8 ]
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "13
-[v gpio_pin_direction_init@my_pin my_pin `*.39CS28  1 p 2 0 ]
+[v gpio_pin_direction_init@my_pin my_pin `*.39CS24  1 p 2 0 ]
 "30
 } 0

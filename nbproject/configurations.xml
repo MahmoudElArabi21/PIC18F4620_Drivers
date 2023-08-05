@@ -14,6 +14,9 @@
         <logicalFolder name="DC_MOTOR" displayName="DC_MOTOR" projectFiles="true">
           <itemPath>ECU_L/DC_MOTOR/dcmotor.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="LCD" displayName="LCD" projectFiles="true">
+          <itemPath>ECU_L/LCD/lcd.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECU_L/LED/led.h</itemPath>
         </logicalFolder>
@@ -46,6 +49,9 @@
         </logicalFolder>
         <logicalFolder name="DC_MOTOR" displayName="DC_MOTOR" projectFiles="true">
           <itemPath>ECU_L/DC_MOTOR/dcmotor.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="LCD" displayName="LCD" projectFiles="true">
+          <itemPath>ECU_L/LCD/lcd.c</itemPath>
         </logicalFolder>
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECU_L/LED/led.c</itemPath>

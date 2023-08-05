@@ -4746,44 +4746,48 @@ Std_ReturnType gpio_port_logic_toggle(port_index_t my_port);
 
 
 
+
+
+
+
 typedef enum{
-    seg_com_anode,
-    seg_com_cathode
+    SEGMENT_COMMON_ANODE,
+    SEGMENT_COMMON_CATHODE
 }segment_type_t;
 
 typedef struct{
     pin_config_t segment_pins[4];
-    segment_type_t segment_type ;
-}segmest_t;
+    segment_type_t segment_type;
+}segment_t;
 
-Std_ReturnType segment_initialze(const segmest_t *my_segment);
-Std_ReturnType segment_write_number(const segmest_t *my_segment, int number);
+Std_ReturnType seven_segement_intialize(const segment_t *seg);
+Std_ReturnType seven_segement_write_number(const segment_t *seg, uint8 number);
 # 1 "ECU_L/7_segments/segments_7.c" 2
 
 
-Std_ReturnType segment_initialze(const segmest_t *my_segment){
+Std_ReturnType seven_segement_intialize(const segment_t *seg){
     Std_ReturnType ret = (Std_ReturnType)0x01;
-    if(((void*)0) == my_segment){
+    if(((void*)0) == seg){
         ret = (Std_ReturnType)0x00;
     }
     else{
-        ret = gpio_pin_initialize(&(my_segment->segment_pins[0]));
-        ret = gpio_pin_initialize(&(my_segment->segment_pins[1]));
-        ret = gpio_pin_initialize(&(my_segment->segment_pins[2]));
-        ret = gpio_pin_initialize(&(my_segment->segment_pins[3]));
+        ret = gpio_pin_initialize(&(seg->segment_pins[0]));
+        ret = gpio_pin_initialize(&(seg->segment_pins[1]));
+        ret = gpio_pin_initialize(&(seg->segment_pins[2]));
+        ret = gpio_pin_initialize(&(seg->segment_pins[3]));
     }
     return ret;
 }
-Std_ReturnType segment_write_number(const segmest_t *my_segment, int number){
+Std_ReturnType seven_segement_write_number(const segment_t *seg, uint8 number){
     Std_ReturnType ret = (Std_ReturnType)0x01;
-    if((((void*)0) == my_segment) && (number > 9)){
+    if((((void*)0) == seg) && (number > 9)){
         ret = (Std_ReturnType)0x00;
     }
     else{
-        ret = gpio_pin_logic_write(&(my_segment->segment_pins[0]), (number& 1));
-        ret = gpio_pin_logic_write(&(my_segment->segment_pins[1]), (number>>1 & 0x01));
-        ret = gpio_pin_logic_write(&(my_segment->segment_pins[2]), (number>>2 & 0x01));
-        ret = gpio_pin_logic_write(&(my_segment->segment_pins[3]), (number>>3 & 0x01));
+        ret = gpio_pin_logic_write(&(seg->segment_pins[0]), (number & 0x01));
+        ret = gpio_pin_logic_write(&(seg->segment_pins[1]), (number>>1 & 0x01));
+        ret = gpio_pin_logic_write(&(seg->segment_pins[2]), (number>>2 & 0x01));
+        ret = gpio_pin_logic_write(&(seg->segment_pins[3]), (number>>3 & 0x01));
     }
     return ret;
 }

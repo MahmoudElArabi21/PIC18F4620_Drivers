@@ -9,45 +9,89 @@
 #include <stdlib.h>
 #include "app.h"
 
+chr_lcd_4bit_t LCD1 = {.lcd_rs.port=port_C ,
+                       .lcd_rs.pin=pin_0,
+                       .lcd_rs.direction=gpio_output,
+                       .lcd_rs.logic=gpio_low,
+                       .lcd_en.port=port_C ,
+                       .lcd_en.pin=pin_1,
+                       .lcd_en.direction=gpio_output,
+                       .lcd_en.logic=gpio_low,
+                       .lcd_data[0].port=port_C ,
+                       .lcd_data[0].pin=pin_2,
+                       .lcd_data[0].direction=gpio_output,
+                       .lcd_data[0].logic=gpio_low,
+                       .lcd_data[1].port=port_C ,
+                       .lcd_data[1].pin=pin_3,
+                       .lcd_data[1].direction=gpio_output,
+                       .lcd_data[1].logic=gpio_low,
+                       .lcd_data[2].port=port_C ,
+                       .lcd_data[2].pin=pin_4,
+                       .lcd_data[2].direction=gpio_output,
+                       .lcd_data[2].logic=gpio_low,
+                       .lcd_data[3].port=port_C ,
+                       .lcd_data[3].pin=pin_5,
+                       .lcd_data[3].direction=gpio_output,
+                       .lcd_data[3].logic=gpio_low,};
 
-segmest_t segment_anode = { .segment_pins[0].port = port_C,
-                            .segment_pins[0].pin = 0,
-                            .segment_pins[0].direction =0,
-                            .segment_pins[0].logic=0,
-                            .segment_pins[1].port = port_C,
-                            .segment_pins[1].pin = 1,
-                            .segment_pins[1].direction =0,
-                            .segment_pins[1].logic=0,
-                            .segment_pins[2].port = port_C,
-                            .segment_pins[2].pin = 2,
-                            .segment_pins[2].direction =0,
-                            .segment_pins[2].logic=0 ,      
-                            .segment_type = seg_com_anode  };
+chr_lcd_8bit_t LCD2 = {   .lcd_rs.port=port_C ,
+                       .lcd_rs.pin=pin_6,
+                       .lcd_rs.direction=gpio_output,
+                       .lcd_rs.logic=gpio_low,
+                       .lcd_en.port=port_C ,
+                       .lcd_en.pin=pin_7,
+                       .lcd_en.direction=gpio_output,
+                       .lcd_en.logic=gpio_low,
+                       .lcd_data[0].port=port_D ,
+                       .lcd_data[0].pin=pin_0,
+                       .lcd_data[0].direction=gpio_output,
+                       .lcd_data[0].logic=gpio_low,
+                       .lcd_data[1].port=port_D ,
+                       .lcd_data[1].pin=pin_1,
+                       .lcd_data[1].direction=gpio_output,
+                       .lcd_data[1].logic=gpio_low,
+                       .lcd_data[2].port=port_D ,
+                       .lcd_data[2].pin=pin_2,
+                       .lcd_data[2].direction=gpio_output,
+                       .lcd_data[2].logic=gpio_low,
+                       .lcd_data[3].port=port_D ,
+                       .lcd_data[3].pin=pin_3,
+                       .lcd_data[3].direction=gpio_output,
+                       .lcd_data[3].logic=gpio_low,
+                       .lcd_data[4].port=port_D ,
+                       .lcd_data[4].pin=pin_4,
+                       .lcd_data[4].direction=gpio_output,
+                       .lcd_data[4].logic=gpio_low,
+                       .lcd_data[5].port=port_D ,
+                       .lcd_data[5].pin=pin_5,
+                       .lcd_data[5].direction=gpio_output,
+                       .lcd_data[5].logic=gpio_low,
+                       .lcd_data[6].port=port_D ,
+                       .lcd_data[6].pin=pin_6,
+                       .lcd_data[6].direction=gpio_output,
+                       .lcd_data[6].logic=gpio_low,
+                       .lcd_data[7].port=port_D ,
+                       .lcd_data[7].pin=pin_7,
+                       .lcd_data[7].direction=gpio_output,
+                       .lcd_data[7].logic=gpio_low,};
 
-segmest_t segment_cathode = { .segment_pins[0].port = port_D,
-                            .segment_pins[0].pin = 0,
-                            .segment_pins[0].direction =0,
-                            .segment_pins[0].logic=0,
-                            .segment_pins[1].port = port_D,
-                            .segment_pins[1].pin = 1,
-                            .segment_pins[1].direction =0,
-                            .segment_pins[1].logic=0,
-                            .segment_pins[2].port = port_D,
-                            .segment_pins[2].pin = 2,
-                            .segment_pins[2].direction =0,
-                            .segment_pins[2].logic=0 ,      
-                            .segment_type = seg_com_cathode  };
-
+const uint8 customchar[]={  
+  0x01,
+  0x03,
+  0x07,
+  0x1F,
+  0x1F,
+  0x07,
+  0x03,
+  0x01
+};
 
 int main() {
-    segment_initialze(&segment_anode);
-    segment_initialze(&segment_cathode);
+    lcd_4bit_intialize(&LCD1);
+    lcd_8bit_intialize(&LCD2);
+    
     while(1){
-        for( int j = 0; j<10; j++){
-            segment_write_number(&segment_anode, j);
-            segment_write_number(&segment_cathode, j);
-            __delay_ms(1000);
-        }
+         lcd_8bit_send_custom_char (&LCD2 , 1 , 20 , customchar , 0);
     }
 }
 
