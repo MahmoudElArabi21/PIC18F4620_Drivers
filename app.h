@@ -14,6 +14,7 @@
 #include "ECU_L/DC_MOTOR/dcmotor.h"
 #include "ECU_L/7_segments/segments_7.h"
 #include "ECU_L/LCD/lcd.h"
+#include "ECU_L/KEYPAD/keypad.h"
 
 #endif	/* APP_H */
 

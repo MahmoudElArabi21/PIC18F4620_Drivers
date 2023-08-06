@@ -27,6 +27,11 @@ gpio_high 1
 gpio_low 0
 gpio_high 1
 ]
+"49 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LCD/lcd.c
+[e E2965 . `uc
+gpio_low 0
+gpio_high 1
+]
 "6 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LED/led.c
 [e E2969 . `uc
 gpio_output 0
@@ -60,7 +65,7 @@ port_C 2
 port_D 3
 port_E 4
 ]
-"12 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+"11 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
 [e E2983 . `uc
 port_A 0
 port_B 1
@@ -86,12 +91,12 @@ gpio_input 1
 gpio_low 0
 gpio_high 1
 ]
-"49 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LCD/lcd.c
+"29 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/KEYPAD/keypad.c
 [e E2965 . `uc
 gpio_low 0
 gpio_high 1
 ]
-"89 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+"48 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
 [v _main main `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -121,16 +126,16 @@ gpio_high 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"12 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LCD/lcd.c
-[v _lcd_4bit_intialize lcd_4bit_intialize `(uc  1 e 1 0 ]
-"41
+"9 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/KEYPAD/keypad.c
+[v _keypad_initialize keypad_initialize `(uc  1 e 1 0 ]
+"26
+[v _keypad_get_value keypad_get_value `(uc  1 e 1 0 ]
+"41 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LCD/lcd.c
 [v _lcd_4bit_send_command lcd_4bit_send_command `(uc  1 e 1 0 ]
 "62
 [v _lcd_4bit_send_char_data lcd_4bit_send_char_data `(uc  1 e 1 0 ]
 "83
 [v _lcd_4bit_send_char_data_pos lcd_4bit_send_char_data_pos `(uc  1 e 1 0 ]
-"139
-[v _lcd_8bit_intialize lcd_8bit_intialize `(uc  1 e 1 0 ]
 "168
 [v _lcd_8bit_send_command lcd_8bit_send_command `(uc  1 e 1 0 ]
 "188
@@ -139,8 +144,6 @@ gpio_high 1
 [v _lcd_8bit_send_char_data_pos lcd_8bit_send_char_data_pos `(uc  1 e 1 0 ]
 "220
 [v _lcd_8bit_send_string lcd_8bit_send_string `(uc  1 e 1 0 ]
-"245
-[v _lcd_8bit_send_custom_char lcd_8bit_send_custom_char `(uc  1 e 1 0 ]
 "306
 [v _lcd_send_4bits lcd_send_4bits `(uc  1 s 1 lcd_send_4bits ]
 "315
@@ -151,6 +154,12 @@ gpio_high 1
 [v _lcd_8bit_set_cursor lcd_8bit_set_cursor `(uc  1 s 1 lcd_8bit_set_cursor ]
 "346
 [v _lcd_4bit_set_cursor lcd_4bit_set_cursor `(uc  1 s 1 lcd_4bit_set_cursor ]
+"4 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LED/led.c
+[v _led_init led_init `(uc  1 e 1 0 ]
+"15
+[v _led_turn_on led_turn_on `(uc  1 e 1 0 ]
+"26
+[v _led_turn_off led_turn_off `(uc  1 e 1 0 ]
 "13 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
 [v _gpio_pin_direction_init gpio_pin_direction_init `(uc  1 e 1 0 ]
 "41
@@ -166,14 +175,15 @@ gpio_high 1
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"12 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
-[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v _LCD1 LCD1 `S386  1 e 6 0 ]
-"37
-[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
-[v _LCD2 LCD2 `S411  1 e 10 0 ]
-"78
-[v _customchar customchar `C[8]uc  1 e 8 0 ]
+"11 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+[s S684 . 8 `[4]S24 1 keypad_row_pins 4 0 `[4]S24 1 keypad_columns_pins 4 4 ]
+[v _keypad keypad `S684  1 e 8 0 ]
+[s S432 . 1 `uc 1 led_port 1 0 :3:0 
+`uc 1 led_pin 1 0 :3:3 
+`uc 1 led_status 1 0 :1:6 
+]
+"46
+[v _led1 led1 `S432  1 e 1 0 ]
 "53 C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "190
@@ -204,203 +214,150 @@ gpio_high 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "2269
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"2 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/KEYPAD/keypad.c
+[v _btn_values btn_values `C[4][4]uc  1 s 16 btn_values ]
 "9 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
 [v _tris_regs tris_regs `[5]*.39VEuc  1 e 10 0 ]
 "10
 [v _port_regs port_regs `[5]*.39VEuc  1 e 10 0 ]
 "11
 [v _lat_regs lat_regs `[5]*.39VEuc  1 e 10 0 ]
-"89 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
+"48 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\app.c
 [v _main main `(i  1 e 2 0 ]
 {
-"96
+"53
+[v main@retval retval `uc  1 a 1 21 ]
+"66
 } 0
-"245 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LCD/lcd.c
-[v _lcd_8bit_send_custom_char lcd_8bit_send_custom_char `(uc  1 e 1 0 ]
+"15 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/LED/led.c
+[v _led_turn_on led_turn_on `(uc  1 e 1 0 ]
 {
-"248
-[v lcd_8bit_send_custom_char@lcd_counter lcd_counter `uc  1 a 1 44 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"245
-[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
-[v lcd_8bit_send_custom_char@lcd lcd `*.39CS411  1 p 2 35 ]
-[v lcd_8bit_send_custom_char@row row `uc  1 p 1 37 ]
-[v lcd_8bit_send_custom_char@column column `uc  1 p 1 38 ]
-"246
-[v lcd_8bit_send_custom_char@_chr _chr `*.25Cuc  1 p 2 39 ]
-[v lcd_8bit_send_custom_char@mem_pos mem_pos `uc  1 p 1 41 ]
-"260
+"17
+[v led_turn_on@my_pin my_pin `S24  1 a 1 13 ]
+[s S432 . 1 `uc 1 led_port 1 0 :3:0 
+`uc 1 led_pin 1 0 :3:3 
+`uc 1 led_status 1 0 :1:6 
+]
+"15
+[v led_turn_on@my_led my_led `*.39CS432  1 p 2 10 ]
+"16
+[v led_turn_on@F3050 F3050 `S24  1 s 1 F3050 ]
+"25
 } 0
-"208
-[v _lcd_8bit_send_char_data_pos lcd_8bit_send_char_data_pos `(uc  1 e 1 0 ]
+"26
+[v _led_turn_off led_turn_off `(uc  1 e 1 0 ]
 {
-"209
-[v lcd_8bit_send_char_data_pos@ret ret `uc  1 a 1 34 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"208
-[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
-[v lcd_8bit_send_char_data_pos@lcd lcd `*.39CS411  1 p 2 29 ]
-[v lcd_8bit_send_char_data_pos@row row `uc  1 p 1 31 ]
-[v lcd_8bit_send_char_data_pos@column column `uc  1 p 1 32 ]
-[v lcd_8bit_send_char_data_pos@data data `uc  1 p 1 33 ]
-"218
+"28
+[v led_turn_off@my_pin my_pin `S24  1 a 1 13 ]
+[s S432 . 1 `uc 1 led_port 1 0 :3:0 
+`uc 1 led_pin 1 0 :3:3 
+`uc 1 led_status 1 0 :1:6 
+]
+"26
+[v led_turn_off@my_led my_led `*.39CS432  1 p 2 10 ]
+"27
+[v led_turn_off@F3055 F3055 `S24  1 s 1 F3055 ]
+"36
 } 0
-"333
-[v _lcd_8bit_set_cursor lcd_8bit_set_cursor `(uc  1 s 1 lcd_8bit_set_cursor ]
+"4
+[v _led_init led_init `(uc  1 e 1 0 ]
 {
-"334
-[v lcd_8bit_set_cursor@ret ret `uc  1 a 1 28 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"333
-[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
-[v lcd_8bit_set_cursor@lcd lcd `*.39CS411  1 p 2 22 ]
-[v lcd_8bit_set_cursor@row row `uc  1 p 1 24 ]
-[v lcd_8bit_set_cursor@coulmn coulmn `uc  1 p 1 25 ]
-"344
+"6
+[v led_init@my_pin my_pin `S24  1 a 1 17 ]
+"5
+[v led_init@ret ret `uc  1 a 1 16 ]
+[s S432 . 1 `uc 1 led_port 1 0 :3:0 
+`uc 1 led_pin 1 0 :3:3 
+`uc 1 led_status 1 0 :1:6 
+]
+"4
+[v led_init@my_led my_led `*.39CS432  1 p 2 13 ]
+"5
+[v led_init@F3045 F3045 `S24  1 s 1 F3045 ]
+"14
 } 0
-"188
-[v _lcd_8bit_send_char_data lcd_8bit_send_char_data `(uc  1 e 1 0 ]
+"9 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/KEYPAD/keypad.c
+[v _keypad_initialize keypad_initialize `(uc  1 e 1 0 ]
 {
-"190
-[v lcd_8bit_send_char_data@l_pin_counter l_pin_counter `uc  1 a 1 21 ]
-"189
-[v lcd_8bit_send_char_data@ret ret `uc  1 a 1 20 ]
+"11
+[v keypad_initialize@columns_counter columns_counter `uc  1 a 1 19 ]
+[v keypad_initialize@rows_counter rows_counter `uc  1 a 1 18 ]
+"10
+[v keypad_initialize@ret ret `uc  1 a 1 17 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"188
-[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
-[v lcd_8bit_send_char_data@lcd lcd `*.39CS411  1 p 2 13 ]
-[v lcd_8bit_send_char_data@data data `uc  1 p 1 15 ]
-"206
+"9
+[s S684 . 8 `[4]S24 1 keypad_row_pins 4 0 `[4]S24 1 keypad_columns_pins 4 4 ]
+[v keypad_initialize@_keypad_obj _keypad_obj `*.39CS684  1 p 2 13 ]
+"24
 } 0
-"139
-[v _lcd_8bit_intialize lcd_8bit_intialize `(uc  1 e 1 0 ]
+"79 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
+[v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
 {
-"141
-[v lcd_8bit_intialize@l_data_pins_counter l_data_pins_counter `uc  1 a 1 27 ]
-"140
-[v lcd_8bit_intialize@ret ret `uc  1 a 1 26 ]
+"80
+[v gpio_pin_initialize@ret ret `uc  1 a 1 12 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"139
-[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
-[v lcd_8bit_intialize@lcd lcd `*.39CS411  1 p 2 22 ]
-"166
+"79
+[v gpio_pin_initialize@my_pin my_pin `*.39CS24  1 p 2 10 ]
+"89
 } 0
-"168
-[v _lcd_8bit_send_command lcd_8bit_send_command `(uc  1 e 1 0 ]
-{
-"170
-[v lcd_8bit_send_command@l_pin_counter l_pin_counter `uc  1 a 1 21 ]
-"169
-[v lcd_8bit_send_command@ret ret `uc  1 a 1 20 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"168
-[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
-[v lcd_8bit_send_command@lcd lcd `*.39CS411  1 p 2 13 ]
-[v lcd_8bit_send_command@command command `uc  1 p 1 15 ]
-"186
-} 0
-"324
-[v _lcd_8bit_send_enable_signal lcd_8bit_send_enable_signal `(uc  1 s 1 lcd_8bit_send_enable_signal ]
-{
-"325
-[v lcd_8bit_send_enable_signal@ret ret `uc  1 a 1 12 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"324
-[s S411 . 10 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[8]S24 1 lcd_data 8 2 ]
-[v lcd_8bit_send_enable_signal@lcd lcd `*.39CS411  1 p 2 10 ]
-"330
-} 0
-"12
-[v _lcd_4bit_intialize lcd_4bit_intialize `(uc  1 e 1 0 ]
+"13
+[v _gpio_pin_direction_init gpio_pin_direction_init `(uc  1 e 1 0 ]
 {
 "14
-[v lcd_4bit_intialize@l_data_pins_counter l_data_pins_counter `uc  1 a 1 23 ]
+[v gpio_pin_direction_init@ret ret `uc  1 a 1 8 ]
+[s S24 . 1 `uc 1 port 1 0 :3:0 
+`uc 1 pin 1 0 :3:3 
+`uc 1 direction 1 0 :1:6 
+`uc 1 logic 1 0 :1:7 
+]
 "13
-[v lcd_4bit_intialize@ret ret `uc  1 a 1 22 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"12
-[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v lcd_4bit_intialize@lcd lcd `*.39CS386  1 p 2 18 ]
-"39
+[v gpio_pin_direction_init@my_pin my_pin `*.39CS24  1 p 2 0 ]
+"30
 } 0
-"41
-[v _lcd_4bit_send_command lcd_4bit_send_command `(uc  1 e 1 0 ]
+"26 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\ECU_L/KEYPAD/keypad.c
+[v _keypad_get_value keypad_get_value `(uc  1 e 1 0 ]
 {
-"42
-[v lcd_4bit_send_command@ret ret `uc  1 a 1 17 ]
+"28
+[v keypad_get_value@l_columns_counter l_columns_counter `uc  1 a 1 20 ]
+[v keypad_get_value@l_rows_counter l_rows_counter `uc  1 a 1 19 ]
+[v keypad_get_value@l_counter l_counter `uc  1 a 1 18 ]
+"29
+[v keypad_get_value@column_logic column_logic `E2965  1 a 1 17 ]
+"27
+[v keypad_get_value@ret ret `uc  1 a 1 16 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"41
-[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v lcd_4bit_send_command@lcd lcd `*.39CS386  1 p 2 14 ]
-[v lcd_4bit_send_command@command command `uc  1 p 1 16 ]
-"60
-} 0
-"306
-[v _lcd_send_4bits lcd_send_4bits `(uc  1 s 1 lcd_send_4bits ]
-{
-"307
-[v lcd_send_4bits@ret ret `uc  1 a 1 13 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"306
-[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v lcd_send_4bits@lcd lcd `*.39CS386  1 p 2 10 ]
-[v lcd_send_4bits@_data_command _data_command `uc  1 p 1 12 ]
-"313
-} 0
-"315
-[v _lcd_4bit_send_enable_signal lcd_4bit_send_enable_signal `(uc  1 s 1 lcd_4bit_send_enable_signal ]
-{
-"316
-[v lcd_4bit_send_enable_signal@ret ret `uc  1 a 1 12 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"315
-[s S386 . 6 `S24 1 lcd_rs 1 0 `S24 1 lcd_en 1 1 `[4]S24 1 lcd_data 4 2 ]
-[v lcd_4bit_send_enable_signal@lcd lcd `*.39CS386  1 p 2 10 ]
-"321
+"26
+[s S684 . 8 `[4]S24 1 keypad_row_pins 4 0 `[4]S24 1 keypad_columns_pins 4 4 ]
+[v keypad_get_value@_keypad_obj _keypad_obj `*.39CS684  1 p 2 10 ]
+[v keypad_get_value@value value `*.39uc  1 p 2 12 ]
+"49
 } 0
 "41 D:\1Learn\EMBEDDED\A.A Embedded diploma A.A\02_Microcontroller Interfacing\PIC18F4620_Drivers\MCAL/GPIO/gpio.c
 [v _gpio_pin_logic_write gpio_pin_logic_write `(uc  1 e 1 0 ]
@@ -417,17 +374,18 @@ gpio_high 1
 [v gpio_pin_logic_write@logic logic `uc  1 p 1 2 ]
 "58
 } 0
-"13
-[v _gpio_pin_direction_init gpio_pin_direction_init `(uc  1 e 1 0 ]
+"59
+[v _gpio_pin_logic_read gpio_pin_logic_read `(uc  1 e 1 0 ]
 {
-"14
-[v gpio_pin_direction_init@ret ret `uc  1 a 1 8 ]
+"60
+[v gpio_pin_logic_read@ret ret `uc  1 a 1 9 ]
 [s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"13
-[v gpio_pin_direction_init@my_pin my_pin `*.39CS24  1 p 2 0 ]
-"30
+"59
+[v gpio_pin_logic_read@my_pin my_pin `*.39CS24  1 p 2 0 ]
+[v gpio_pin_logic_read@retlogic retlogic `*.39E2965  1 p 2 2 ]
+"68
 } 0
