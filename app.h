@@ -15,6 +15,7 @@
 #include "ECU_L/7_segments/segments_7.h"
 #include "ECU_L/LCD/lcd.h"
 #include "ECU_L/KEYPAD/keypad.h"
+#include "MCAL/INTERRUPT/mcal_exrternal_interrupt.h"
 
 #endif	/* APP_H */
 

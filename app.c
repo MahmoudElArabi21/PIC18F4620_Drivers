@@ -8,59 +8,58 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "app.h"
-keypad_t keypad = {
-    .keypad_row_pins[0].port = port_C,
-    .keypad_row_pins[0].pin = pin_0,
-    .keypad_row_pins[0].direction = gpio_output,
-    .keypad_row_pins[0].logic = gpio_low,
-    .keypad_row_pins[1].port = port_C,
-    .keypad_row_pins[1].pin = pin_1,
-    .keypad_row_pins[1].direction = gpio_output,
-    .keypad_row_pins[1].logic = gpio_low,
-    .keypad_row_pins[2].port = port_C,
-    .keypad_row_pins[2].pin = pin_2,
-    .keypad_row_pins[2].direction = gpio_output,
-    .keypad_row_pins[2].logic = gpio_low,
-    .keypad_row_pins[3].port = port_C,
-    .keypad_row_pins[3].pin = pin_3,
-    .keypad_row_pins[3].direction = gpio_output,
-    .keypad_row_pins[3].logic = gpio_low,
-    .keypad_columns_pins[0].port = port_C,
-    .keypad_columns_pins[0].pin = pin_4,
-    .keypad_columns_pins[0].direction = gpio_input,
-    .keypad_columns_pins[0].logic = gpio_low,
-    .keypad_columns_pins[1].port = port_C,
-    .keypad_columns_pins[1].pin = pin_5,
-    .keypad_columns_pins[1].direction = gpio_input,
-    .keypad_columns_pins[1].logic = gpio_low,
-    .keypad_columns_pins[2].port = port_C,
-    .keypad_columns_pins[2].pin = pin_6,
-    .keypad_columns_pins[2].direction = gpio_input,
-    .keypad_columns_pins[2].logic = gpio_low,
-    .keypad_columns_pins[3].port = port_C,
-    .keypad_columns_pins[3].pin = pin_7,
-    .keypad_columns_pins[3].direction = gpio_input,
-    .keypad_columns_pins[3].logic = gpio_low,
+
+led_t led1 = {port_C,pin_0, 0};
+led_t led2 = {port_C,pin_1, 0};
+led_t led3 = {port_C,pin_2, 0};
+
+void Int0_APP_ISR(void){
+    led_toggle(&led1);
+}
+void Int1_APP_ISR(void){
+    led_toggle(&led2);
+}
+void Int2_APP_ISR(void){
+    led_toggle(&led3);
+}
+
+interrupt_INTx_t int0_obj = {
+  .EXT_InterruptHandler =  Int0_APP_ISR,
+  .edge = INTERRUPT_RISING_EDGE,
+  .priority = 1,
+  .source = INTERRUPT_EXTERNAL_INT0,
+  .mcu_pin.port = port_B,
+  .mcu_pin.pin = pin_0,
+  .mcu_pin.direction = 1
 };
 
-led_t led1 = {port_A,pin_0, 0};
-led_t led2 = {port_A,pin_1, 0};
-int main() {
-    Std_ReturnType ret = E_OK;
-    ret = keypad_initialize(&keypad);
-    ret = led_init(&led1);
+interrupt_INTx_t int1_obj = {
+  .EXT_InterruptHandler =  Int1_APP_ISR,
+  .edge = INTERRUPT_FALLING_EDGE,
+  .priority = 1,
+  .source = INTERRUPT_EXTERNAL_INT1,
+  .mcu_pin.port = port_B,
+  .mcu_pin.pin = pin_1,
+  .mcu_pin.direction = 1
+};
 
-    uint8 retval = 0;
+interrupt_INTx_t int2_obj = {
+  .EXT_InterruptHandler =  Int2_APP_ISR,
+  .edge = INTERRUPT_RISING_EDGE,
+  .priority = 1,
+  .source = INTERRUPT_EXTERNAL_INT2,
+  .mcu_pin.port = port_B,
+  .mcu_pin.pin = pin_2,
+  .mcu_pin.direction = 1
+};
+int main() {
+    Interrupt_INTx_Init(&int0_obj);
+    Interrupt_INTx_Init(&int1_obj);
+    Interrupt_INTx_Init(&int2_obj);
+    led_init(&led1);
+    led_init(&led2);
+    led_init(&led3);
     while(1){
-        ret = keypad_get_value(&keypad, &retval);
-        if(retval == '7'){
-            led_turn_on(&led1);
-        }
-        if(retval == '8'){
-            led_turn_off(&led1);
-        }
-        else{
-            
-        }
+        
     }
 }
