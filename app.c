@@ -9,57 +9,28 @@
 #include <stdlib.h>
 #include "app.h"
 
-led_t led1 = {port_C,pin_0, 0};
-led_t led2 = {port_C,pin_1, 0};
-led_t led3 = {port_C,pin_2, 0};
+uint8 eeprom_val = 0, eeprom_read_val;
 
-void Int0_APP_ISR(void){
-    led_toggle(&led1);
-}
-void Int1_APP_ISR(void){
-    led_toggle(&led2);
-}
-void Int2_APP_ISR(void){
-    led_toggle(&led3);
-}
+led_t led1 = {port_D, pin_0, 0};
 
-interrupt_INTx_t int0_obj = {
-  .EXT_InterruptHandler =  Int0_APP_ISR,
-  .edge = INTERRUPT_RISING_EDGE,
-  .priority = 1,
-  .source = INTERRUPT_EXTERNAL_INT0,
-  .mcu_pin.port = port_B,
-  .mcu_pin.pin = pin_0,
-  .mcu_pin.direction = 1
-};
-
-interrupt_INTx_t int1_obj = {
-  .EXT_InterruptHandler =  Int1_APP_ISR,
-  .edge = INTERRUPT_FALLING_EDGE,
-  .priority = 1,
-  .source = INTERRUPT_EXTERNAL_INT1,
-  .mcu_pin.port = port_B,
-  .mcu_pin.pin = pin_1,
-  .mcu_pin.direction = 1
-};
-
-interrupt_INTx_t int2_obj = {
-  .EXT_InterruptHandler =  Int2_APP_ISR,
-  .edge = INTERRUPT_RISING_EDGE,
-  .priority = 1,
-  .source = INTERRUPT_EXTERNAL_INT2,
-  .mcu_pin.port = port_B,
-  .mcu_pin.pin = pin_2,
-  .mcu_pin.direction = 1
-};
-int main() {
-    Interrupt_INTx_Init(&int0_obj);
-    Interrupt_INTx_Init(&int1_obj);
-    Interrupt_INTx_Init(&int2_obj);
-    led_init(&led1);
-    led_init(&led2);
-    led_init(&led3);
+int main() { 
+    Std_ReturnType ret = E_NOT_OK;
+    
+    ret = led_init(&led1);
+    ret = eeprom_write_byte(0x3ff, 0);
+    
     while(1){
+        ret = eeprom_write_byte(0x3ff, eeprom_val++);
+        __delay_ms(1000);
+        ret = eeprom_read_byte(0x3ff, &eeprom_read_val);
+        
+        if(5 == eeprom_read_val){
+            led_turn_on(&led1);
+        }
+        else{
+            led_turn_off(&led1);
+        }
         
     }
+    return (EXIT_SUCCESS);
 }

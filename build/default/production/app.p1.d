@@ -13,4 +13,5 @@ ECU_L/LCD/lcd.h  \
 ECU_L/KEYPAD/keypad.h  \
 MCAL/INTERRUPT/mcal_exrternal_interrupt.h  \
 MCAL/INTERRUPT/mcal_interrupt_config.h  \
-MCAL/INTERRUPT/mcal_interrupt_gen_cfg.h 
+MCAL/INTERRUPT/mcal_interrupt_gen_cfg.h  \
+MCAL/EEPROM/eeprom.h 

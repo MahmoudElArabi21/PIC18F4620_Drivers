@@ -1,4 +1,4 @@
-# 1 "app.c"
+# 1 "MCAL/EEPROM/eeprom.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,14 +6,16 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "app.c" 2
+# 1 "MCAL/EEPROM/eeprom.c" 2
+# 1 "MCAL/EEPROM/eeprom.h" 1
+# 10 "MCAL/EEPROM/eeprom.h"
+# 1 "MCAL/EEPROM/../GPIO/gpio.h" 1
+# 10 "MCAL/EEPROM/../GPIO/gpio.h"
+# 1 "MCAL/EEPROM/../GPIO/gpio_cfg.h" 1
+# 10 "MCAL/EEPROM/../GPIO/gpio.h" 2
 
-
-
-
-
-
-
+# 1 "MCAL/EEPROM/../GPIO/../mcal_types.h" 1
+# 13 "MCAL/EEPROM/../GPIO/../mcal_types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdio.h" 1 3
 
 
@@ -177,7 +179,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 8 "app.c" 2
+# 13 "MCAL/EEPROM/../GPIO/../mcal_types.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 1 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\stdlib.h" 3
@@ -242,19 +244,8 @@ typedef struct { unsigned int quot, rem; } udiv_t;
 typedef struct { unsigned long quot, rem; } uldiv_t;
 udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
-# 9 "app.c" 2
+# 14 "MCAL/EEPROM/../GPIO/../mcal_types.h" 2
 
-# 1 "./app.h" 1
-# 11 "./app.h"
-# 1 "./ECU_L/LED/led.h" 1
-# 10 "./ECU_L/LED/led.h"
-# 1 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 1
-# 10 "./ECU_L/LED/../../MCAL/GPIO/gpio.h"
-# 1 "./ECU_L/LED/../../MCAL/GPIO/gpio_cfg.h" 1
-# 10 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
-
-# 1 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 1
-# 15 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -310,7 +301,7 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 15 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
+# 15 "MCAL/EEPROM/../GPIO/../mcal_types.h" 2
 
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 3
@@ -4687,7 +4678,7 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\\pic\\include\\xc.h" 2 3
-# 16 "./ECU_L/LED/../../MCAL/GPIO/../mcal_types.h" 2
+# 16 "MCAL/EEPROM/../GPIO/../mcal_types.h" 2
 
 
 
@@ -4699,8 +4690,8 @@ typedef signed short sint16;
 typedef signed long sint32;
 
 typedef uint8 Std_ReturnType;
-# 11 "./ECU_L/LED/../../MCAL/GPIO/gpio.h" 2
-# 23 "./ECU_L/LED/../../MCAL/GPIO/gpio.h"
+# 11 "MCAL/EEPROM/../GPIO/gpio.h" 2
+# 23 "MCAL/EEPROM/../GPIO/gpio.h"
 typedef enum {
             gpio_low,
             gpio_high
@@ -4751,152 +4742,21 @@ Std_ReturnType gpio_port_direction_stat(port_index_t my_port , uint8 *retdirecti
 Std_ReturnType gpio_port_logic_write(port_index_t my_port, uint8 my_logic);
 Std_ReturnType gpio_port_logic_read(port_index_t my_port , uint8 *retlogic);
 Std_ReturnType gpio_port_logic_toggle(port_index_t my_port);
-# 10 "./ECU_L/LED/led.h" 2
+# 10 "MCAL/EEPROM/eeprom.h" 2
 
-
-typedef enum{
-    led_off,
-    led_on,
-}led_status_t;
-
-typedef struct{
-    uint8 led_port :3;
-    uint8 led_pin :3;
-    uint8 led_status :1;
-}led_t;
-
-Std_ReturnType led_init(const led_t* my_led);
-Std_ReturnType led_turn_on(const led_t* my_led);
-Std_ReturnType led_turn_off(const led_t* my_led);
-Std_ReturnType led_toggle(const led_t* my_led);
-# 11 "./app.h" 2
-
-# 1 "./ECU_L/BUTTON/button.h" 1
-# 13 "./ECU_L/BUTTON/button.h"
-typedef enum{
-    btn_pressed,
-    btn_released,
-}btn_press_state_t;
-
-typedef enum{
-    btn_active_high,
-    btn_active_low,
-}btn_active_state_t;
-
-typedef struct {
-    pin_config_t button_pin;
-    btn_press_state_t button_state;
-    btn_active_state_t button_activate;
-}button_t;
-
-Std_ReturnType button_inittialze(button_t *my_btn);
-Std_ReturnType button_read_status(button_t *my_btn, btn_press_state_t *btn_state);
-# 12 "./app.h" 2
-
-# 1 "./ECU_L/RELAY/relay.h" 1
-# 17 "./ECU_L/RELAY/relay.h"
-typedef struct {
-    uint8 relay_port :3;
-    uint8 relay_pin :3;
-    uint8 relay_status :1;
-}relay_t;
-
-Std_ReturnType relay_initialize(const relay_t *my_relay);
-Std_ReturnType relay_turn_on(const relay_t *my_relay);
-Std_ReturnType relay_turn_off(const relay_t *my_relay);
-# 13 "./app.h" 2
-
-# 1 "./ECU_L/DC_MOTOR/dcmotor.h" 1
-# 17 "./ECU_L/DC_MOTOR/dcmotor.h"
-typedef struct {
-    pin_config_t dcmotorpins[2];
-}dcmotor_t;
-
-Std_ReturnType dc_motor_initialize(const dcmotor_t *my_dcmotor);
-Std_ReturnType dc_motor_move_right(const dcmotor_t *my_dcmotor);
-Std_ReturnType dc_motor_move_left(const dcmotor_t *my_dcmotor);
-Std_ReturnType dc_motor_stop(const dcmotor_t *my_dcmotor);
-# 14 "./app.h" 2
-
-# 1 "./ECU_L/7_segments/segments_7.h" 1
-# 18 "./ECU_L/7_segments/segments_7.h"
-typedef enum{
-    SEGMENT_COMMON_ANODE,
-    SEGMENT_COMMON_CATHODE
-}segment_type_t;
-
-typedef struct{
-    pin_config_t segment_pins[4];
-    segment_type_t segment_type;
-}segment_t;
-
-Std_ReturnType seven_segement_intialize(const segment_t *seg);
-Std_ReturnType seven_segement_write_number(const segment_t *seg, uint8 number);
-# 15 "./app.h" 2
-
-# 1 "./ECU_L/LCD/lcd.h" 1
-# 42 "./ECU_L/LCD/lcd.h"
-typedef struct{
-    pin_config_t lcd_rs;
-    pin_config_t lcd_en;
-    pin_config_t lcd_data[4];
-}chr_lcd_4bit_t;
-
-typedef struct{
-    pin_config_t lcd_rs;
-    pin_config_t lcd_en;
-    pin_config_t lcd_data[8];
-}chr_lcd_8bit_t;
-
-
-Std_ReturnType lcd_4bit_intialize(const chr_lcd_4bit_t *lcd);
-Std_ReturnType lcd_4bit_send_command(const chr_lcd_4bit_t *lcd, uint8 command);
-Std_ReturnType lcd_4bit_send_char_data(const chr_lcd_4bit_t *lcd, uint8 data);
-Std_ReturnType lcd_4bit_send_char_data_pos(const chr_lcd_4bit_t *lcd,uint8 row, uint8 column, uint8 data);
-Std_ReturnType lcd_4bit_send_string(const chr_lcd_4bit_t *lcd, uint8 *str);
-Std_ReturnType lcd_4bit_send_string_pos(const chr_lcd_4bit_t *lcd, uint8 row, uint8 column, uint8 *str);
-Std_ReturnType lcd_4bit_send_custom_char(const chr_lcd_4bit_t *lcd, uint8 row, uint8 column,
-                                         const uint8 _chr[], uint8 mem_pos);
-
-Std_ReturnType lcd_8bit_intialize(const chr_lcd_8bit_t *lcd);
-Std_ReturnType lcd_8bit_send_command(const chr_lcd_8bit_t *lcd, uint8 command);
-Std_ReturnType lcd_8bit_send_char_data(const chr_lcd_8bit_t *lcd, uint8 data);
-Std_ReturnType lcd_8bit_send_char_data_pos(const chr_lcd_8bit_t *lcd,uint8 row, uint8 column, uint8 data);
-Std_ReturnType lcd_8bit_send_string(const chr_lcd_8bit_t *lcd, uint8 *str);
-Std_ReturnType lcd_8bit_send_string_pos(const chr_lcd_8bit_t *lcd, uint8 row, uint8 column, uint8 *str);
-Std_ReturnType lcd_8bit_send_custom_char(const chr_lcd_8bit_t *lcd, uint8 row, uint8 column,
-                                         const uint8 _chr[], uint8 mem_pos);
-
-Std_ReturnType convert_uint8_to_string(uint8 value, uint8 *str);
-Std_ReturnType convert_uint16_to_string(uint16 value, uint8 *str);
-Std_ReturnType convert_uint32_to_string(uint32 value, uint8 *str);
-# 16 "./app.h" 2
-
-# 1 "./ECU_L/KEYPAD/keypad.h" 1
-# 19 "./ECU_L/KEYPAD/keypad.h"
-typedef struct{
-    pin_config_t keypad_row_pins[4];
-    pin_config_t keypad_columns_pins[4];
-}keypad_t;
-
-
-Std_ReturnType keypad_initialize(const keypad_t *_keypad_obj);
-Std_ReturnType keypad_get_value(const keypad_t *_keypad_obj, uint8 *value);
-# 17 "./app.h" 2
-
-# 1 "./MCAL/INTERRUPT/mcal_exrternal_interrupt.h" 1
-# 13 "./MCAL/INTERRUPT/mcal_exrternal_interrupt.h"
-# 1 "./MCAL/INTERRUPT/mcal_interrupt_config.h" 1
-# 13 "./MCAL/INTERRUPT/mcal_interrupt_config.h"
-# 1 "./MCAL/INTERRUPT/mcal_interrupt_gen_cfg.h" 1
-# 13 "./MCAL/INTERRUPT/mcal_interrupt_config.h" 2
-# 47 "./MCAL/INTERRUPT/mcal_interrupt_config.h"
+# 1 "MCAL/EEPROM/../INTERRUPT/mcal_exrternal_interrupt.h" 1
+# 13 "MCAL/EEPROM/../INTERRUPT/mcal_exrternal_interrupt.h"
+# 1 "MCAL/EEPROM/../INTERRUPT/mcal_interrupt_config.h" 1
+# 13 "MCAL/EEPROM/../INTERRUPT/mcal_interrupt_config.h"
+# 1 "MCAL/EEPROM/../INTERRUPT/mcal_interrupt_gen_cfg.h" 1
+# 13 "MCAL/EEPROM/../INTERRUPT/mcal_interrupt_config.h" 2
+# 47 "MCAL/EEPROM/../INTERRUPT/mcal_interrupt_config.h"
 typedef enum {
     INTERRUPT_LOW_PRIORITY = 0,
     INTERRUPT_HIGH_PRIORITY
 } interrupt_priority_cfg;
-# 13 "./MCAL/INTERRUPT/mcal_exrternal_interrupt.h" 2
-# 66 "./MCAL/INTERRUPT/mcal_exrternal_interrupt.h"
+# 13 "MCAL/EEPROM/../INTERRUPT/mcal_exrternal_interrupt.h" 2
+# 66 "MCAL/EEPROM/../INTERRUPT/mcal_exrternal_interrupt.h"
 typedef void (*InterruptHandler)(void);
 
 typedef enum {
@@ -4931,38 +4791,61 @@ Std_ReturnType Interrupt_INTx_Init(const interrupt_INTx_t *int_obj);
 Std_ReturnType Interrupt_INTx_DeInit(const interrupt_INTx_t *int_obj);
 Std_ReturnType Interrupt_RBx_Init(const interrupt_RBx_t *int_obj);
 Std_ReturnType Interrupt_RBx_DeInit(const interrupt_RBx_t *int_obj);
-# 18 "./app.h" 2
+# 11 "MCAL/EEPROM/eeprom.h" 2
 
-# 1 "./MCAL/EEPROM/eeprom.h" 1
-# 12 "./MCAL/EEPROM/eeprom.h"
 Std_ReturnType eeprom_write_byte(uint16 EADD, uint8 EData);
 Std_ReturnType eeprom_read_byte(uint16 EADD, uint8 *EData);
-# 19 "./app.h" 2
-# 10 "app.c" 2
+# 1 "MCAL/EEPROM/eeprom.c" 2
 
 
-uint8 eeprom_val = 0, eeprom_read_val;
+Std_ReturnType eeprom_write_byte(uint16 EADD, uint8 EData){
+    Std_ReturnType ret = (Std_ReturnType)0x01;
 
-led_t led1 = {port_D, pin_0, 0};
+    uint8 Global_Interrupt_Status = INTCONbits.GIE;
 
-int main() {
+    EEADRH = (uint8)((EADD >> 8) & 0x03);
+    EEADR = (uint8)(EADD & 0xFF);
+
+    EEDATA = EData;
+
+    EECON1bits.EEPGD = 0;
+    EECON1bits.CFGS = 0;
+
+    EECON1bits.WREN = 1;
+
+    (INTCONbits.GIE = 0);
+
+    EECON2 = 0x55;
+    EECON2 = 0xAA;
+
+    EECON1bits.WR = 1;
+
+    while(EECON1bits.WR);
+
+    EECON1bits.WREN = 0;
+
+    INTCONbits.GIE = Global_Interrupt_Status;
+    return ret;
+}
+Std_ReturnType eeprom_read_byte(uint16 EADD, uint8 *EData){
     Std_ReturnType ret = (Std_ReturnType)0x00;
-
-    ret = led_init(&led1);
-    ret = eeprom_write_byte(0x3ff, 0);
-
-    while(1){
-        ret = eeprom_write_byte(0x3ff, eeprom_val++);
-        _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-        ret = eeprom_read_byte(0x3ff, &eeprom_read_val);
-
-        if(5 == eeprom_read_val){
-            led_turn_on(&led1);
-        }
-        else{
-            led_turn_off(&led1);
-        }
-
+    if(((void*)0) == EData){
+        ret = (Std_ReturnType)0x00;
     }
-    return (0);
+    else{
+
+        EEADRH = (uint8)((EADD >> 8) & 0x03);
+        EEADR = (uint8)(EADD & 0xFF);
+
+        EECON1bits.EEPGD = 0;
+        EECON1bits.CFGS = 0;
+
+        EECON1bits.RD = 1;
+        __nop();
+        __nop();
+
+        *EData = EEDATA;
+        ret = (Std_ReturnType)0x01;
+    }
+    return ret;
 }
