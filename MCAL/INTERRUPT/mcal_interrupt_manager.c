@@ -22,7 +22,7 @@ void __interrupt(low_priority) InterruptManagerLow(void){
 
 #else
 void __interrupt() InterruptManager(void){
-    /* ============ INTx External On Change Interrupt Start ============ */
+/* ============ INTx External On Change Interrupt Start ============ */
     if((INTERRUPT_ENABLE == INTCONbits.INT0IE) && (INTERRUPT_OCCUR == INTCONbits.INT0IF)){
         INT0_ISR(); /* External Interrupt 0 */
     }
@@ -35,7 +35,7 @@ void __interrupt() InterruptManager(void){
         INT2_ISR(); /* External Interrupt 2 */
     }
     else{ /* Nothing */ }
-    /* ============ INTx External Interrupt End ============ */
+/* ============ INTx External Interrupt End ============ */
     
     /* ============ PortB External On Change Interrupt Start ============ */
     if((INTERRUPT_ENABLE == INTCONbits.RBIE) && (INTERRUPT_OCCUR == INTCONbits.RBIF) && 
@@ -87,6 +87,10 @@ void __interrupt() InterruptManager(void){
     }
     else{ /* Nothing */ }
     
-
+/*_____________________________ADC______________________________*/
+    if((INTERRUPT_ENABLE == PIE1bits.ADIE ) && (INTERRUPT_OCCUR == PIR1bits.ADIF)){
+        ADC_ISR();
+    }
+    else{ /* Nothing */ }
 }
 #endif

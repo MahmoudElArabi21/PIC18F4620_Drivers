@@ -1,34 +1,24 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"17 ./ECU_L/LED/led.h
-[; ;./ECU_L/LED/led.h: 17: typedef struct{
-[s S274 :3 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S274 . led_port led_pin led_status ]
-"14 app.c
-[; ;app.c: 14: led_t led1 = {port_D, pin_0, 0};
-[c E2983 0 1 2 3 4 .. ]
-[n E2983 . port_A port_B port_C port_D port_E  ]
-[c E2973 0 1 2 3 4 5 6 7 .. ]
-[n E2973 . pin_0 pin_1 pin_2 pin_3 pin_4 pin_5 pin_6 pin_7  ]
+[v F3258 `(v ~T0 @X0 0 tf ]
+"13 app.c
+[; ;app.c: 13: adc_conf_t adc_1 = {
+[c E3177 0 1 .. ]
+[n E3177 . INTERRUPT_LOW_PRIORITY INTERRUPT_HIGH_PRIORITY  ]
+[c E3237 0 1 2 3 4 5 6 7 .. ]
+[n E3237 . ADC_0_TAD ADC_2_TAD ADC_4_TAD ADC_6_TAD ADC_8_TAD ADC_12_TAD ADC_16_TAD ADC_20_TAD  ]
+[c E3247 0 1 2 3 4 5 6 .. ]
+[n E3247 . ADC_CONVERSION_CLOCK_FOSC_DIV_2 ADC_CONVERSION_CLOCK_FOSC_DIV_8 ADC_CONVERSION_CLOCK_FOSC_DIV_32 ADC_CONVERSION_CLOCK_FOSC_DIV_FRC ADC_CONVERSION_CLOCK_FOSC_DIV_4 ADC_CONVERSION_CLOCK_FOSC_DIV_16 ADC_CONVERSION_CLOCK_FOSC_DIV_64  ]
+[c E3222 0 1 2 3 4 5 6 7 8 9 10 11 12 .. ]
+[n E3222 . ADC_CHANNEL_AN0 ADC_CHANNEL_AN1 ADC_CHANNEL_AN2 ADC_CHANNEL_AN3 ADC_CHANNEL_AN4 ADC_CHANNEL_AN5 ADC_CHANNEL_AN6 ADC_CHANNEL_AN7 ADC_CHANNEL_AN8 ADC_CHANNEL_AN9 ADC_CHANNEL_AN10 ADC_CHANNEL_AN11 ADC_CHANNEL_AN12  ]
+"95 ./MCAL/ADC/adc.h
+[; ;./MCAL/ADC/adc.h: 95: typedef struct{
+[s S284 `*F3258 1 `E3177 1 `E3237 1 `E3247 1 `E3222 1 :1 `uc 1 :1 `uc 1 :6 `uc 1 ]
+[n S284 . ADC_InterruptHandler priority acquisition_time conversion_clock adc_channel voltage_reference result_format ADC_Reserved ]
+[v F3295 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
-"23 ./ECU_L/LED/led.h
-[; ;./ECU_L/LED/led.h: 23: Std_ReturnType led_init(const led_t* my_led);
-[v _led_init `(uc ~T0 @X0 0 ef1`*CS274 ]
-"12 ./MCAL/EEPROM/eeprom.h
-[; ;./MCAL/EEPROM/eeprom.h: 12: Std_ReturnType eeprom_write_byte(uint16 EADD, uint8 EData);
-[v _eeprom_write_byte `(uc ~T0 @X0 0 ef2`us`uc ]
-[v F677 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
-[v __delay `JF677 ~T0 @X0 0 e ]
-[p i __delay ]
-"13 ./MCAL/EEPROM/eeprom.h
-[; ;./MCAL/EEPROM/eeprom.h: 13: Std_ReturnType eeprom_read_byte(uint16 EADD, uint8 *EData);
-[v _eeprom_read_byte `(uc ~T0 @X0 0 ef2`us`*uc ]
-"24 ./ECU_L/LED/led.h
-[; ;./ECU_L/LED/led.h: 24: Std_ReturnType led_turn_on(const led_t* my_led);
-[v _led_turn_on `(uc ~T0 @X0 0 ef1`*CS274 ]
-"25
-[; ;./ECU_L/LED/led.h: 25: Std_ReturnType led_turn_off(const led_t* my_led);
-[v _led_turn_off `(uc ~T0 @X0 0 ef1`*CS274 ]
+"118
+[; ;./MCAL/ADC/adc.h: 118: Std_ReturnType ADC_GetConversion_Blocking(const adc_conf_t *_adc, adc_channel_select_t channel,adc_result_t *conversion_result);
+[v _ADC_GetConversion_Blocking `(uc ~T0 @X0 0 ef3`*CS284`E3222`*us ]
 "55 C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 55: __asm("PORTA equ 0F80h");
 [; <" PORTA equ 0F80h ;# ">
@@ -440,88 +430,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6716
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v6.05/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4620.h: 6716: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"12 app.c
-[; ;app.c: 12: uint8 eeprom_val = 0, eeprom_read_val;
-[v _eeprom_val `uc ~T0 @X0 1 e ]
-[i _eeprom_val
--> -> 0 `i `uc
-]
-[v _eeprom_read_val `uc ~T0 @X0 1 e ]
-"14
-[; ;app.c: 14: led_t led1 = {port_D, pin_0, 0};
-[v _led1 `S274 ~T0 @X0 1 e ]
-[i _led1
+"11 app.c
+[; ;app.c: 11: uint16 adc_res_1, adc_res_2, adc_res_3, adc_res_4;
+[v _adc_res_1 `us ~T0 @X0 1 e ]
+[v _adc_res_2 `us ~T0 @X0 1 e ]
+[v _adc_res_3 `us ~T0 @X0 1 e ]
+[v _adc_res_4 `us ~T0 @X0 1 e ]
+"13
+[; ;app.c: 13: adc_conf_t adc_1 = {
+[v _adc_1 `S284 ~T0 @X0 1 e ]
+[i _adc_1
 :U ..
 :U ..
--> . `E2983 3 `uc
--> . `E2973 0 `uc
--> -> 0 `i `uc
+-> -> -> 0 `i `*v `*F3295
+-> -> 0 `i `E3177
+. `E3237 5
+. `E3247 5
+. `E3222 0
+-> -> 0 `ui `uc
+-> -> 1 `ui `uc
 ..
 ..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"16
-[; ;app.c: 16: int main() {
+"22
+[; ;app.c: 22: int main() {
 [v _main `(i ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"17
-[; ;app.c: 17:     Std_ReturnType ret = (Std_ReturnType)0x00;
+"23
+[; ;app.c: 23:     Std_ReturnType ret = (Std_ReturnType)0x00;
 [v _ret `uc ~T0 @X0 1 a ]
 [e = _ret -> -> 0 `i `uc ]
-"19
-[; ;app.c: 19:     ret = led_init(&led1);
-[e = _ret ( _led_init (1 -> &U _led1 `*CS274 ]
-"20
-[; ;app.c: 20:     ret = eeprom_write_byte(0x3ff, 0);
-[e = _ret ( _eeprom_write_byte (2 , -> -> 1023 `i `us -> -> 0 `i `uc ]
-"22
-[; ;app.c: 22:     while(1){
-[e :U 286 ]
-{
-"23
-[; ;app.c: 23:         ret = eeprom_write_byte(0x3ff, eeprom_val++);
-[e = _ret ( _eeprom_write_byte (2 , -> -> 1023 `i `us ++ _eeprom_val -> -> 1 `i `uc ]
 "24
-[; ;app.c: 24:         _delay((unsigned long)((1000)*(4000000UL/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 4000000 `ul `d .4000.0 `ul ]
-"25
-[; ;app.c: 25:         ret = eeprom_read_byte(0x3ff, &eeprom_read_val);
-[e = _ret ( _eeprom_read_byte (2 , -> -> 1023 `i `us &U _eeprom_read_val ]
-"27
-[; ;app.c: 27:         if(5 == eeprom_read_val){
-[e $ ! == -> 5 `i -> _eeprom_read_val `i 288  ]
-{
-"28
-[; ;app.c: 28:             led_turn_on(&led1);
-[e ( _led_turn_on (1 -> &U _led1 `*CS274 ]
-"29
-[; ;app.c: 29:         }
-}
-[e $U 289  ]
-"30
-[; ;app.c: 30:         else{
-[e :U 288 ]
-{
-"31
-[; ;app.c: 31:             led_turn_off(&led1);
-[e ( _led_turn_off (1 -> &U _led1 `*CS274 ]
-"32
-[; ;app.c: 32:         }
-}
-[e :U 289 ]
-"34
-[; ;app.c: 34:     }
-}
-[e :U 285 ]
-[e $U 286  ]
+[; ;app.c: 24:     while(1){
 [e :U 287 ]
-"35
-[; ;app.c: 35:     return (0);
+{
+"25
+[; ;app.c: 25:         ret = ADC_GetConversion_Blocking(&adc_1, ADC_CHANNEL_AN0, &adc_res_1);
+[e = _ret ( _ADC_GetConversion_Blocking (3 , , -> &U _adc_1 `*CS284 . `E3222 0 &U _adc_res_1 ]
+"26
+[; ;app.c: 26:         ret = ADC_GetConversion_Blocking(&adc_1, ADC_CHANNEL_AN1, &adc_res_2);
+[e = _ret ( _ADC_GetConversion_Blocking (3 , , -> &U _adc_1 `*CS284 . `E3222 1 &U _adc_res_2 ]
+"27
+[; ;app.c: 27:         ret = ADC_GetConversion_Blocking(&adc_1, ADC_CHANNEL_AN2, &adc_res_3);
+[e = _ret ( _ADC_GetConversion_Blocking (3 , , -> &U _adc_1 `*CS284 . `E3222 2 &U _adc_res_3 ]
+"28
+[; ;app.c: 28:         ret = ADC_GetConversion_Blocking(&adc_1, ADC_CHANNEL_AN3, &adc_res_4);
+[e = _ret ( _ADC_GetConversion_Blocking (3 , , -> &U _adc_1 `*CS284 . `E3222 3 &U _adc_res_4 ]
+"29
+[; ;app.c: 29:     }
+}
+[e :U 286 ]
+[e $U 287  ]
+[e :U 288 ]
+"30
+[; ;app.c: 30:     return (0);
 [e ) -> 0 `i ]
-[e $UE 284  ]
-"36
-[; ;app.c: 36: }
-[e :UE 284 ]
+[e $UE 285  ]
+"31
+[; ;app.c: 31: }
+[e :UE 285 ]
 }

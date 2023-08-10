@@ -17,6 +17,7 @@
 #include "ECU_L/KEYPAD/keypad.h"
 #include "MCAL/INTERRUPT/mcal_exrternal_interrupt.h"
 #include "MCAL/EEPROM/eeprom.h"
+#include "MCAL/ADC/adc.h"
 
 #endif	/* APP_H */
 

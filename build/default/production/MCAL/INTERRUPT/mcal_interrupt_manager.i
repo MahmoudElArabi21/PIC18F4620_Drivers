@@ -4770,6 +4770,8 @@ void RB4_ISR(uint8 RB4_Source);
 void RB5_ISR(uint8 RB5_Source);
 void RB6_ISR(uint8 RB6_Source);
 void RB7_ISR(uint8 RB7_Source);
+
+void ADC_ISR(void);
 # 1 "MCAL/INTERRUPT/mcal_interrupt_manager.c" 2
 
 static volatile uint8 RB4_Flag = 1, RB5_Flag = 1, RB6_Flag = 1, RB7_Flag = 1;
@@ -4841,4 +4843,8 @@ void __attribute__((picinterrupt(("")))) InterruptManager(void){
     else{ }
 
 
+    if((1 == PIE1bits.ADIE ) && (1 == PIR1bits.ADIF)){
+        ADC_ISR();
+    }
+    else{ }
 }
