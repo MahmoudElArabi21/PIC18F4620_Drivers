@@ -23,8 +23,22 @@
 #if INTERRUPT_PRIORITY_LEVELS_ENABLE==INTERRUPT_FEATURE_ENABLE 
 #define ADC_HighPrioritySet()           (IPR1bits.ADIP = 1)   
 #define ADC_LowPrioritySet()            (IPR1bits.ADIP = 0)   
+
+#endif
 #endif
 
+/*_____________________________TMR0______________________________*/
+#if TIMER0_INTERRUPT_FEATURE_ENABLE==INTERRUPT_FEATURE_ENABLE
+
+#define TIMER0_InterruptDisable()         (INTCONbits.TMR0IE = 0)
+#define TIMER0_InterruptEnable()          (INTCONbits.TMR0IE = 1)
+#define TIMER0_InterruptFlagClear()       (INTCONbits.TMR0IF = 0)
+
+#if INTERRUPT_PRIORITY_LEVELS_ENABLE==INTERRUPT_FEATURE_ENABLE 
+#define TIMER0_HighPrioritySet()          (INTCON2bits.TMR0IP = 1)
+#define TIMER0_LowPrioritySet()           (INTCON2bits.TMR0IP = 0)
+
+#endif
 #endif
 
 

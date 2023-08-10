@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ECU_L/7_segments/segments_7.c ECU_L/BUTTON/button.c ECU_L/DC_MOTOR/dcmotor.c ECU_L/KEYPAD/keypad.c ECU_L/LCD/lcd.c ECU_L/LED/led.c ECU_L/RELAY/relay.c MCAL/ADC/adc.c MCAL/EEPROM/eeprom.c MCAL/GPIO/gpio.c MCAL/INTERRUPT/mcal_exrternal_interrupt.c MCAL/INTERRUPT/mcal_interrupt_manager.c MCAL/INTERRUPT/mcal_internal_interrupt.c app.c
+SOURCEFILES_QUOTED_IF_SPACED=ECU_L/7_segments/segments_7.c ECU_L/BUTTON/button.c ECU_L/DC_MOTOR/dcmotor.c ECU_L/KEYPAD/keypad.c ECU_L/LCD/lcd.c ECU_L/LED/led.c ECU_L/RELAY/relay.c MCAL/ADC/adc.c MCAL/EEPROM/eeprom.c MCAL/GPIO/gpio.c MCAL/INTERRUPT/mcal_exrternal_interrupt.c MCAL/INTERRUPT/mcal_interrupt_manager.c MCAL/INTERRUPT/mcal_internal_interrupt.c app.c MCAL/TIMERS/TIMER0/timer0.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ECU_L/7_segments/segments_7.p1 ${OBJECTDIR}/ECU_L/BUTTON/button.p1 ${OBJECTDIR}/ECU_L/DC_MOTOR/dcmotor.p1 ${OBJECTDIR}/ECU_L/KEYPAD/keypad.p1 ${OBJECTDIR}/ECU_L/LCD/lcd.p1 ${OBJECTDIR}/ECU_L/LED/led.p1 ${OBJECTDIR}/ECU_L/RELAY/relay.p1 ${OBJECTDIR}/MCAL/ADC/adc.p1 ${OBJECTDIR}/MCAL/EEPROM/eeprom.p1 ${OBJECTDIR}/MCAL/GPIO/gpio.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_exrternal_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_interrupt_manager.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_internal_interrupt.p1 ${OBJECTDIR}/app.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/ECU_L/7_segments/segments_7.p1.d ${OBJECTDIR}/ECU_L/BUTTON/button.p1.d ${OBJECTDIR}/ECU_L/DC_MOTOR/dcmotor.p1.d ${OBJECTDIR}/ECU_L/KEYPAD/keypad.p1.d ${OBJECTDIR}/ECU_L/LCD/lcd.p1.d ${OBJECTDIR}/ECU_L/LED/led.p1.d ${OBJECTDIR}/ECU_L/RELAY/relay.p1.d ${OBJECTDIR}/MCAL/ADC/adc.p1.d ${OBJECTDIR}/MCAL/EEPROM/eeprom.p1.d ${OBJECTDIR}/MCAL/GPIO/gpio.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/mcal_exrternal_interrupt.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/mcal_interrupt_manager.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/mcal_internal_interrupt.p1.d ${OBJECTDIR}/app.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ECU_L/7_segments/segments_7.p1 ${OBJECTDIR}/ECU_L/BUTTON/button.p1 ${OBJECTDIR}/ECU_L/DC_MOTOR/dcmotor.p1 ${OBJECTDIR}/ECU_L/KEYPAD/keypad.p1 ${OBJECTDIR}/ECU_L/LCD/lcd.p1 ${OBJECTDIR}/ECU_L/LED/led.p1 ${OBJECTDIR}/ECU_L/RELAY/relay.p1 ${OBJECTDIR}/MCAL/ADC/adc.p1 ${OBJECTDIR}/MCAL/EEPROM/eeprom.p1 ${OBJECTDIR}/MCAL/GPIO/gpio.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_exrternal_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_interrupt_manager.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_internal_interrupt.p1 ${OBJECTDIR}/app.p1 ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/ECU_L/7_segments/segments_7.p1.d ${OBJECTDIR}/ECU_L/BUTTON/button.p1.d ${OBJECTDIR}/ECU_L/DC_MOTOR/dcmotor.p1.d ${OBJECTDIR}/ECU_L/KEYPAD/keypad.p1.d ${OBJECTDIR}/ECU_L/LCD/lcd.p1.d ${OBJECTDIR}/ECU_L/LED/led.p1.d ${OBJECTDIR}/ECU_L/RELAY/relay.p1.d ${OBJECTDIR}/MCAL/ADC/adc.p1.d ${OBJECTDIR}/MCAL/EEPROM/eeprom.p1.d ${OBJECTDIR}/MCAL/GPIO/gpio.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/mcal_exrternal_interrupt.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/mcal_interrupt_manager.p1.d ${OBJECTDIR}/MCAL/INTERRUPT/mcal_internal_interrupt.p1.d ${OBJECTDIR}/app.p1.d ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ECU_L/7_segments/segments_7.p1 ${OBJECTDIR}/ECU_L/BUTTON/button.p1 ${OBJECTDIR}/ECU_L/DC_MOTOR/dcmotor.p1 ${OBJECTDIR}/ECU_L/KEYPAD/keypad.p1 ${OBJECTDIR}/ECU_L/LCD/lcd.p1 ${OBJECTDIR}/ECU_L/LED/led.p1 ${OBJECTDIR}/ECU_L/RELAY/relay.p1 ${OBJECTDIR}/MCAL/ADC/adc.p1 ${OBJECTDIR}/MCAL/EEPROM/eeprom.p1 ${OBJECTDIR}/MCAL/GPIO/gpio.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_exrternal_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_interrupt_manager.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_internal_interrupt.p1 ${OBJECTDIR}/app.p1
+OBJECTFILES=${OBJECTDIR}/ECU_L/7_segments/segments_7.p1 ${OBJECTDIR}/ECU_L/BUTTON/button.p1 ${OBJECTDIR}/ECU_L/DC_MOTOR/dcmotor.p1 ${OBJECTDIR}/ECU_L/KEYPAD/keypad.p1 ${OBJECTDIR}/ECU_L/LCD/lcd.p1 ${OBJECTDIR}/ECU_L/LED/led.p1 ${OBJECTDIR}/ECU_L/RELAY/relay.p1 ${OBJECTDIR}/MCAL/ADC/adc.p1 ${OBJECTDIR}/MCAL/EEPROM/eeprom.p1 ${OBJECTDIR}/MCAL/GPIO/gpio.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_exrternal_interrupt.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_interrupt_manager.p1 ${OBJECTDIR}/MCAL/INTERRUPT/mcal_internal_interrupt.p1 ${OBJECTDIR}/app.p1 ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1
 
 # Source Files
-SOURCEFILES=ECU_L/7_segments/segments_7.c ECU_L/BUTTON/button.c ECU_L/DC_MOTOR/dcmotor.c ECU_L/KEYPAD/keypad.c ECU_L/LCD/lcd.c ECU_L/LED/led.c ECU_L/RELAY/relay.c MCAL/ADC/adc.c MCAL/EEPROM/eeprom.c MCAL/GPIO/gpio.c MCAL/INTERRUPT/mcal_exrternal_interrupt.c MCAL/INTERRUPT/mcal_interrupt_manager.c MCAL/INTERRUPT/mcal_internal_interrupt.c app.c
+SOURCEFILES=ECU_L/7_segments/segments_7.c ECU_L/BUTTON/button.c ECU_L/DC_MOTOR/dcmotor.c ECU_L/KEYPAD/keypad.c ECU_L/LCD/lcd.c ECU_L/LED/led.c ECU_L/RELAY/relay.c MCAL/ADC/adc.c MCAL/EEPROM/eeprom.c MCAL/GPIO/gpio.c MCAL/INTERRUPT/mcal_exrternal_interrupt.c MCAL/INTERRUPT/mcal_interrupt_manager.c MCAL/INTERRUPT/mcal_internal_interrupt.c app.c MCAL/TIMERS/TIMER0/timer0.c
 
 
 
@@ -200,6 +200,14 @@ ${OBJECTDIR}/app.p1: app.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/app.d ${OBJECTDIR}/app.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/app.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1: MCAL/TIMERS/TIMER0/timer0.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL/TIMERS/TIMER0" 
+	@${RM} ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1 MCAL/TIMERS/TIMER0/timer0.c 
+	@-${MV} ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.d ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/ECU_L/7_segments/segments_7.p1: ECU_L/7_segments/segments_7.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}/ECU_L/7_segments" 
@@ -312,6 +320,14 @@ ${OBJECTDIR}/app.p1: app.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/app.p1 app.c 
 	@-${MV} ${OBJECTDIR}/app.d ${OBJECTDIR}/app.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/app.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1: MCAL/TIMERS/TIMER0/timer0.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/MCAL/TIMERS/TIMER0" 
+	@${RM} ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1.d 
+	@${RM} ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gcoff -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1 MCAL/TIMERS/TIMER0/timer0.c 
+	@-${MV} ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.d ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/MCAL/TIMERS/TIMER0/timer0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

@@ -18,6 +18,7 @@
 #include "MCAL/INTERRUPT/mcal_exrternal_interrupt.h"
 #include "MCAL/EEPROM/eeprom.h"
 #include "MCAL/ADC/adc.h"
+#include "MCAL/TIMERS/TIMER0/timer0.h"
 
 #endif	/* APP_H */
 

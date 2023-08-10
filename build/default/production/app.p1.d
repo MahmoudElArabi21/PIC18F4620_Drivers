@@ -16,4 +16,5 @@ MCAL/INTERRUPT/mcal_interrupt_config.h  \
 MCAL/INTERRUPT/mcal_interrupt_gen_cfg.h  \
 MCAL/EEPROM/eeprom.h  \
 MCAL/ADC/adc.h  \
-MCAL/ADC/../INTERRUPT/mcal_internal_interrupt.h 
+MCAL/ADC/../INTERRUPT/mcal_internal_interrupt.h  \
+MCAL/TIMERS/TIMER0/timer0.h 

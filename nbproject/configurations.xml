@@ -46,6 +46,9 @@
           <itemPath>MCAL/INTERRUPT/mcal_internal_interrupt.h</itemPath>
         </logicalFolder>
         <logicalFolder name="TIMERS" displayName="TIMERS" projectFiles="true">
+          <logicalFolder name="TIMER0" displayName="TIMER0" projectFiles="true">
+            <itemPath>MCAL/TIMERS/TIMER0/timer0.h</itemPath>
+          </logicalFolder>
         </logicalFolder>
         <itemPath>MCAL/mcal_types.h</itemPath>
       </logicalFolder>
@@ -95,6 +98,11 @@
           <itemPath>MCAL/INTERRUPT/mcal_exrternal_interrupt.c</itemPath>
           <itemPath>MCAL/INTERRUPT/mcal_interrupt_manager.c</itemPath>
           <itemPath>MCAL/INTERRUPT/mcal_internal_interrupt.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="TIMERS" displayName="TIMERS" projectFiles="true">
+          <logicalFolder name="TIMER0" displayName="TIMER0" projectFiles="true">
+            <itemPath>MCAL/TIMERS/TIMER0/timer0.c</itemPath>
+          </logicalFolder>
         </logicalFolder>
       </logicalFolder>
       <itemPath>app.c</itemPath>
